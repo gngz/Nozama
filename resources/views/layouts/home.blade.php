@@ -28,6 +28,14 @@
         @yield('content')
 
         <footer>
+            <ul>
+                <li>Sobre Nós</li>
+                <li>Termos de Utilização</li>
+                <li>Política de Privacidade</li>
+            </ul>
+            <div class="copyright">
+                <p>Copyright Ⓒ Nozama 2019 - Todos os direitos reservados.</p>
+            </div>
         </footer>
     </body>
 </html>

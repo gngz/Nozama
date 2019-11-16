@@ -5,3 +5,22 @@
   background-size: contain 100px;
 }
 
+footer {
+  background-color: #22333b;
+  color: white;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+footer .copyright {
+  background-color: #191919;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
