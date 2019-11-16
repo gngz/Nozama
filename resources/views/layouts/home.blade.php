@@ -9,8 +9,8 @@
         <!-- Fonts -->
 
         <!-- Styles -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/welcome.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     </head>
     <body>
         <nav class="navbar">
