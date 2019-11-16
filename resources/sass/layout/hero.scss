@@ -1,0 +1,19 @@
+.hero {
+    display: block;
+
+    min-height: 350px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $light-orange;
+
+    @media screen and (max-width: 1200px) { 
+        background: $light-orange;
+        background-image: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+        display: none;
+    } 
+}
