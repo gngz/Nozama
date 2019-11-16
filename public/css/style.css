@@ -94,6 +94,43 @@
   display: flex;
 }
 
+.hero {
+  display: block;
+  min-height: 350px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #FEF9F2;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    background: #FEF9F2;
+    background-image: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    display: none;
+  }
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+}
+
 html,
 body {
   margin: 0;
