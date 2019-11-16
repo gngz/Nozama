@@ -12,4 +12,4 @@ const mix = require('laravel-mix');
  */
 
 mix.sass('resources/sass/layout/style.scss', 'public/css')
-   .sass('resources/sass/welcome.scss', 'public/css')
+   .sass('resources/sass/nozama.scss', 'public/css')
