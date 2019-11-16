@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:300,400,100&display=swap');
+@import 'colors.scss'; // importing color vars
+@import 'buttons.scss'; // importing button scss
+@import 'nav.scss'; // importing button scss
+
+// removing margins
+html, body {
+    margin:0;
+}
+

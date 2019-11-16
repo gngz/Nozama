@@ -1,0 +1,66 @@
+@mixin buttonBgGradient($primary, $other) {
+    background:linear-gradient(180deg, $other 0%, $primary 7%, $primary 100%); 
+}
+
+.btn   {
+    display: inline-block !important;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    border: 1px solid transparent; // Manter o mesmo tamanho entre botões com borda e sem borda.
+    //height: 10px;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: 'Raleway', sans-serif;
+
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+    transition: background-color 0.4s ease-out;
+    transition: color 1s ease-out;
+
+
+    &.primary{
+
+        @include buttonBgGradient($primary-color, #FFB453 );
+        background:linear-gradient(180deg, #FFB453 0%, $primary-color 7%, $primary-color 100%); 
+        color: white;
+        box-sizing: border-box;
+        
+
+        /*
+            Ao passar o cursor por cima.
+            Deverá ter uma cor de fundo mais escura.
+        */
+        &:hover {
+            @include buttonBgGradient($primary-color, #FFB453 );
+        }
+
+        /*
+            Ao clicar
+            Deverá aplciar um inline shadow
+        */
+        &:active {
+            background: $primary-color;
+        }
+    }
+
+    &.inverted {
+        box-sizing: border-box;    
+        color: $primary-color;
+        background-color: transparent;
+        border: solid 1px $primary-color;
+        
+        
+        &:hover {
+            @include buttonBgGradient($primary-color, #FFB453 );
+            color: white;
+        }
+
+        &:active {
+            background: $primary-color;
+            color:white;
+        }
+        
+    }
+}

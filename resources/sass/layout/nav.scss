@@ -1,0 +1,30 @@
+.navbar {
+    background-color: $nav-bg-color;
+    min-height: 120px;
+    border-top: solid $primary-color 1px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    a {
+        text-decoration: none;
+    }
+    
+    .btn {
+        font-size: 18px;
+    }
+
+    li {
+        margin-left: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+}
