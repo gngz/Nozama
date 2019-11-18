@@ -9,6 +9,7 @@
         <!-- Fonts -->
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nozama.css') }}">
     </head>
@@ -18,21 +19,28 @@
             <ul>
                 @auth
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Member Area</a></li>
+                    <li><a class="btn primary"  href="#">Comprar</a></li>
                 @else
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Entrar</a></li>
+                    <li><a class="btn primary"  href="#">Registar</a></li>
                 @endauth
                 
-                <li><a class="btn primary"  href="#">Comprar</a></li>
+                
             </ul>
         </nav>
         @yield('content')
-
         <footer>
-            <ul>
-                <li>Sobre Nós</li>
-                <li>Termos de Utilização</li>
-                <li>Política de Privacidade</li>
-            </ul>
+            <div class="footer">
+                <ul>
+                    <li>|</li>
+                    <li>Sobre Nós</li>
+                    <li>|</li>
+                    <li>Termos de Utilização</li>
+                    <li>|</li>
+                    <li>Política de Privacidade</li>
+                    <li>|</li>
+                </ul>
+            </div>
             <div class="copyright">
                 <p>Copyright Ⓒ Nozama 2019 - Todos os direitos reservados.</p>
             </div>

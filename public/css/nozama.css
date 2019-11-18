@@ -6,15 +6,29 @@
 }
 
 footer {
-  background-color: #22333b;
   color: white;
 }
 
-footer ul {
+footer .footer {
+  background-color: #22333b;
+  min-height: 120px;
+}
+
+footer .footer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   padding-top: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  flex-wrap: wrap;
+}
+
+footer .footer ul li {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 footer .copyright {
