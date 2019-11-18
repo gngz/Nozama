@@ -1,0 +1,21 @@
+stages:
+  - deploy
+
+before_script:
+  - apt-get update -qq
+  - 'which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+
+
+deploy_production:
+  type: deploy
+  stage: deploy
+  only:
+    - master
+  script:
+    - ssh -t $SSH_HOST "cd && ./deploy-nozama.sh"
