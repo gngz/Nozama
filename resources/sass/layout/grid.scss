@@ -1,0 +1,45 @@
+$num_cols: 12; // numero de colunas
+$sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone)
+
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+
+.row.centered{
+    justify-content: center;
+}
+
+.col {
+    flex:1;
+}
+
+
+/*
+    Gerar as classes com o tamanho da coluna.
+    Colunas com breakpoint para smartphone
+*/
+
+@for $i from 1 through $num_cols  {
+    .col-#{$i} {
+        overflow: hidden;
+        flex-basis: 100% * ($i / $num_cols);
+
+    }
+}
+
+/*
+    Ao atingir o breakpoint com a media query, fazer com que as colunas sejam todas 100% de largura
+*/
+@media screen and (max-width: $sm_break) {
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .sm {
+        flex-basis: 100%;
+    }
+
+}
