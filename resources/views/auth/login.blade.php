@@ -5,7 +5,8 @@
     @csrf
     <div class="row centered">
             <div class="sm w500">
-                <h2 class="title">Login ou criar conta.</h2>
+                <h1 class="title">Login ou criar conta.</h2>
+                <h2 class="subtitle">Bem-vindo de volta à Nozama</h2>
             </div>
     </div>
     <div class="row centered">
