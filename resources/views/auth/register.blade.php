@@ -3,7 +3,8 @@
 @section('content')
 <div class="row centered">
     <div class="sm w500">
-        <h2 class="title">Criar nova conta.</h2>
+        <h1 class="title">Criar nova conta.</h2>
+        <h2 class="subtitle">Um pequeno passo para o mundo Nozama.</h2>
     </div>
 </div>
 
