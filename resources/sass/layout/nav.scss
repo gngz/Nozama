@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
     padding-left: 10%;
     padding-right: 10%;
@@ -17,6 +17,7 @@
     
     .btn {
         font-size: 18px;
+        overflow: hidden;
     }
 
     li {
@@ -28,3 +29,13 @@
         display: flex;
     }
 }
+
+// remove icons from navbar buttons
+@media only screen and (max-width: 650px) {
+    .navbar .btn i{
+        display: none;
+    }
+
+  
+
+} 

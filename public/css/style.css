@@ -76,7 +76,7 @@
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -87,6 +87,7 @@
 
 .navbar .btn {
   font-size: 18px;
+  overflow: hidden;
 }
 
 .navbar li {
@@ -97,6 +98,12 @@
   list-style-type: none;
   display: -webkit-box;
   display: flex;
+}
+
+@media only screen and (max-width: 650px) {
+  .navbar .btn i {
+    display: none;
+  }
 }
 
 .hero {
@@ -308,6 +315,7 @@
 .input,
 .select select {
   width: 100%;
+  margin-top: 10px;
   background-color: white;
   border-radius: 4px;
   box-sizing: border-box;

@@ -1,7 +1,68 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('content')
-<div class="container">
+<div class="row centered">
+    <div class="sm w500">
+        <h2 class="title">Criar nova conta.</h2>
+    </div>
+</div>
+
+
+<form method="POST" action="{{ route('register') }}">
+    @csrf
+    <div class="row centered">
+        <div class="sm w500 form-field">
+            <label class="label" for="name">Nome</label>
+            <input id="name" type="text" class="input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Introduza o seu nome. e.g: José Alberto">
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+    <div class="row centered">
+        <div class="sm w500 form-field">
+            <label class="label" for="email">E-mail</label>
+            <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="O seu email. e.g: utilizador@exemplo.com.">
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="row centered">
+        <div class="sm w500 form-field">
+            <label class="label" for="password">Password</label>
+            <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Introduza uma password.">
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="row centered">
+        <div class="sm w500 form-field">
+            <label class="label" for="password-confirm">Confirmar password</label>
+            <input id="password-confirm" type="password" class="input" name="password_confirmation" required autocomplete="new-password" placeholder="Volte a introduzir a password.">
+        </div>
+    </div>
+
+    <div class="row centered">
+        <div class="sm w500 form-field">
+            <button type="submit" class="btn primary btn-md w100">Registar</button>
+    
+        </div>
+    </div>
+</form>
+
+
+
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +134,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

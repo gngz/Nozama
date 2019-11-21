@@ -15,7 +15,7 @@
     </head>
     <body>
         <nav class="navbar">
-            <a class="logo" href="/"><img src="img/logo.png" alt=""></a>
+            <a class="logo" href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
             <ul>
                 @auth
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Member Area</a></li>
