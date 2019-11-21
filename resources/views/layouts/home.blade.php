@@ -22,13 +22,15 @@
                     <li><a class="btn primary"  href="#">Comprar</a></li>
                 @else
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Entrar</a></li>
-                    <li><a class="btn primary"  href="#">Registar</a></li>
+                    <li><a class="btn primary"  href="{{ route('register') }}">Registar</a></li>
                 @endauth
                 
                 
             </ul>
         </nav>
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
         <footer>
             <div class="footer">
                 <ul>

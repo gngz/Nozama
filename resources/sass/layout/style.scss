@@ -5,10 +5,14 @@
 @import 'hero.scss'; // hero section scss
 @import 'text.scss'; // text utils scss
 @import 'grid.scss'; // grid scss
-@import 'form.scss'; // grid scss
+@import 'form.scss'; // form scss
+@import 'utils.scss'; // utils scss
 
 // removing margins
 html, body {
     margin:0;
 }
 
+hr {
+    border: .5px solid rgba($dark-blue, 0.2);
+}

@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:300,400,100&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:300,400,200&display=swap);@charset "UTF-8";
 
 .btn {
+  outline: none;
   display: inline-block !important;
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   border: 1px solid transparent;
   padding-left: 1.25em;
@@ -11,11 +11,12 @@
   padding-bottom: 0.5em;
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
-  /* Opera/IE 8+ */
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
   -webkit-transition: color 1s ease-out;
   transition: color 1s ease-out;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn.primary {
@@ -59,6 +60,10 @@
 .btn.inverted:active {
   background: #F18904;
   color: white;
+}
+
+.btn-md {
+  font-size: 16px;
 }
 
 .navbar {
@@ -128,11 +133,243 @@
 
 .subtitle {
   font-family: "Raleway", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
+}
+
+.row {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+}
+
+.row.centered {
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.row.right {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.row.left {
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+
+.col {
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+/*
+    Gerar as classes com o tamanho da coluna.
+    Colunas com breakpoint para smartphone
+*/
+
+.col-1 {
+  overflow: hidden;
+  flex-basis: 8.3333333333%;
+}
+
+.col-2 {
+  overflow: hidden;
+  flex-basis: 16.6666666667%;
+}
+
+.col-3 {
+  overflow: hidden;
+  flex-basis: 25%;
+}
+
+.col-4 {
+  overflow: hidden;
+  flex-basis: 33.3333333333%;
+}
+
+.col-5 {
+  overflow: hidden;
+  flex-basis: 41.6666666667%;
+}
+
+.col-6 {
+  overflow: hidden;
+  flex-basis: 50%;
+}
+
+.col-7 {
+  overflow: hidden;
+  flex-basis: 58.3333333333%;
+}
+
+.col-8 {
+  overflow: hidden;
+  flex-basis: 66.6666666667%;
+}
+
+.col-9 {
+  overflow: hidden;
+  flex-basis: 75%;
+}
+
+.col-10 {
+  overflow: hidden;
+  flex-basis: 83.3333333333%;
+}
+
+.col-11 {
+  overflow: hidden;
+  flex-basis: 91.6666666667%;
+}
+
+.col-12 {
+  overflow: hidden;
+  flex-basis: 100%;
+}
+
+.fixed-1 {
+  overflow: hidden;
+  flex-basis: 8.3333333333vmax;
+}
+
+.fixed-2 {
+  overflow: hidden;
+  flex-basis: 16.6666666667vmax;
+}
+
+.fixed-3 {
+  overflow: hidden;
+  flex-basis: 25vmax;
+}
+
+.fixed-4 {
+  overflow: hidden;
+  flex-basis: 33.3333333333vmax;
+}
+
+.fixed-5 {
+  overflow: hidden;
+  flex-basis: 41.6666666667vmax;
+}
+
+.fixed-6 {
+  overflow: hidden;
+  flex-basis: 50vmax;
+}
+
+.fixed-7 {
+  overflow: hidden;
+  flex-basis: 58.3333333333vmax;
+}
+
+.fixed-8 {
+  overflow: hidden;
+  flex-basis: 66.6666666667vmax;
+}
+
+.fixed-9 {
+  overflow: hidden;
+  flex-basis: 75vmax;
+}
+
+.fixed-10 {
+  overflow: hidden;
+  flex-basis: 83.3333333333vmax;
+}
+
+.fixed-11 {
+  overflow: hidden;
+  flex-basis: 91.6666666667vmax;
+}
+
+.fixed-12 {
+  overflow: hidden;
+  flex-basis: 100vmax;
+}
+
+/*
+    Ao atingir o breakpoint com a media query, fazer com que as colunas sejam todas 100% de largura
+*/
+
+@media screen and (max-width: 576px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .sm {
+    flex-basis: 100%;
+  }
+}
+
+.form-field {
+  padding: 10px;
+}
+
+.input,
+.select select {
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 4px 10px 4px 10px;
+  font-size: 12pt;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.input:focus,
+.select select:focus {
+  border: 1px solid #f18904;
+  box-shadow: 0px 0px 0px 2px rgba(241, 137, 4, 0.4);
+}
+
+.input.rounded,
+.select select.rounded {
+  border-radius: 25%;
+}
+
+.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 20px;
+}
+
+.select {
+  position: relative;
+  display: inline;
+}
+
+.select:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.4em;
+  content: "\F107";
+  color: #f18904;
+  padding: 12px 8px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  pointer-events: none;
+  border: 0;
+  padding: 0;
+}
+
+.w100 {
+  width: 100%;
 }
 
 html,
 body {
   margin: 0;
+}
+
+hr {
+  border: 0.5px solid rgba(34, 51, 59, 0.2);
 }
 

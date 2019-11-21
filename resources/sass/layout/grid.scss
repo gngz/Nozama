@@ -12,6 +12,14 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
     justify-content: center;
 }
 
+.row.right {
+    justify-content: flex-end;
+}
+
+.row.left {
+    justify-content: flex-start;
+}
+
 .col {
     flex:1;
 }
@@ -26,6 +34,15 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
     .col-#{$i} {
         overflow: hidden;
         flex-basis: 100% * ($i / $num_cols);
+
+    }
+}
+
+
+@for $i from 1 through $num_cols  {
+    .fixed-#{$i} {
+        overflow: hidden;
+        flex-basis: 100vmax * ($i / $num_cols);
 
     }
 }

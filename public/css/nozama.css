@@ -38,3 +38,11 @@ footer .copyright {
   padding-bottom: 2px;
 }
 
+.w500 {
+  width: 500px;
+}
+
+.content {
+  min-height: calc(100vh - 299px);
+}
+
