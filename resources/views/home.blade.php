@@ -1,7 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('content')
-<div class="container">
+
+<div class="row centered">
+    <div class="sm col-8">
+        <h1 class="subtitle">A minha conta</h1>
+    </div>
+</div>
+
+<div class="row centered">
+    <div class="sm col-8">
+        <p>{{ Auth::user()->roles }}</p>
+    </div>
+</div>
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +31,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
