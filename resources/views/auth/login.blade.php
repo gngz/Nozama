@@ -40,14 +40,14 @@
     </div>
 
     <div class="row centered">
-        <div class="sm w500 form-field">
-            <a href="{{ route('password.request') }}" class="btn inverted btn-md w100">Recuperar conta</a>
+        <div class="sm w500 form-field text-center">
+            <a href="{{ route('password.request') }}" class="btn link btn-md">Esqueceu-se da password?</a>
         </div>
     </div>
 
     <div class="row centered">
         <div class="sm w500 form-field">
-            <hr>
+            <hr class="line">
             <a href="{{ route('register') }}" class="btn inverted btn-md w100">Registar nova conta</a>
         </div>
     </div>
