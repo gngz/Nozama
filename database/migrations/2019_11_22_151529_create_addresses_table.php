@@ -21,8 +21,8 @@ class CreateAddressesTable extends Migration
             $table->string('doorNumber');
             $table->string('region');
             $table->string('country');
-            $table->string('phoneNumber');
-            $table->string('firstName');
+            $table->string('phoneNumber')->nullable();  //this can be nullable
+            $table->string('firstName');    
             $table->string('lastName');
             $table->string('isMainAddress');
             $table->timestamps();
