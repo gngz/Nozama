@@ -34,13 +34,11 @@
         <footer>
             <div class="footer">
                 <ul>
-                    <li>|</li>
                     <li>Sobre Nós</li>
                     <li>|</li>
                     <li>Termos de Utilização</li>
                     <li>|</li>
                     <li>Política de Privacidade</li>
-                    <li>|</li>
                 </ul>
             </div>
             <div class="copyright">

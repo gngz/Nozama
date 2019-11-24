@@ -194,120 +194,100 @@
 
 .col-1 {
   overflow: hidden;
-  flex-basis: 8.3333333333%;
+  flex-basis: 10%;
 }
 
 .col-2 {
   overflow: hidden;
-  flex-basis: 16.6666666667%;
+  flex-basis: 20%;
 }
 
 .col-3 {
   overflow: hidden;
-  flex-basis: 25%;
+  flex-basis: 30%;
 }
 
 .col-4 {
   overflow: hidden;
-  flex-basis: 33.3333333333%;
+  flex-basis: 40%;
 }
 
 .col-5 {
   overflow: hidden;
-  flex-basis: 41.6666666667%;
+  flex-basis: 50%;
 }
 
 .col-6 {
   overflow: hidden;
-  flex-basis: 50%;
+  flex-basis: 60%;
 }
 
 .col-7 {
   overflow: hidden;
-  flex-basis: 58.3333333333%;
+  flex-basis: 70%;
 }
 
 .col-8 {
   overflow: hidden;
-  flex-basis: 66.6666666667%;
+  flex-basis: 80%;
 }
 
 .col-9 {
   overflow: hidden;
-  flex-basis: 75%;
+  flex-basis: 90%;
 }
 
 .col-10 {
-  overflow: hidden;
-  flex-basis: 83.3333333333%;
-}
-
-.col-11 {
-  overflow: hidden;
-  flex-basis: 91.6666666667%;
-}
-
-.col-12 {
   overflow: hidden;
   flex-basis: 100%;
 }
 
 .fixed-1 {
   overflow: hidden;
-  flex-basis: 8.3333333333vmax;
+  flex-basis: 10vmax;
 }
 
 .fixed-2 {
   overflow: hidden;
-  flex-basis: 16.6666666667vmax;
+  flex-basis: 20vmax;
 }
 
 .fixed-3 {
   overflow: hidden;
-  flex-basis: 25vmax;
+  flex-basis: 30vmax;
 }
 
 .fixed-4 {
   overflow: hidden;
-  flex-basis: 33.3333333333vmax;
+  flex-basis: 40vmax;
 }
 
 .fixed-5 {
   overflow: hidden;
-  flex-basis: 41.6666666667vmax;
+  flex-basis: 50vmax;
 }
 
 .fixed-6 {
   overflow: hidden;
-  flex-basis: 50vmax;
+  flex-basis: 60vmax;
 }
 
 .fixed-7 {
   overflow: hidden;
-  flex-basis: 58.3333333333vmax;
+  flex-basis: 70vmax;
 }
 
 .fixed-8 {
   overflow: hidden;
-  flex-basis: 66.6666666667vmax;
+  flex-basis: 80vmax;
 }
 
 .fixed-9 {
   overflow: hidden;
-  flex-basis: 75vmax;
+  flex-basis: 90vmax;
 }
 
 .fixed-10 {
-  overflow: hidden;
-  flex-basis: 83.3333333333vmax;
-}
-
-.fixed-11 {
-  overflow: hidden;
-  flex-basis: 91.6666666667vmax;
-}
-
-.fixed-12 {
   overflow: hidden;
   flex-basis: 100vmax;
 }
