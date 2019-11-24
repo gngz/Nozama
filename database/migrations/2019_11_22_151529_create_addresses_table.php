@@ -15,17 +15,20 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('zip');
-            $table->string('street');
-            $table->string('city');
-            $table->string('doorNumber');
-            $table->string('region');
-            $table->string('country');
-            $table->string('phoneNumber')->nullable();  //this can be nullable
-            $table->string('firstName');    
-            $table->string('lastName');
-            $table->string('isMainAddress');
+            $table->text('address');
+            $table->text('address_extra');
+
+            $table->string('phone')->nullable();  //this can be nullable
+            $table->string('name');    
+            $table->string('city');    
+            $table->string('region');    
+            $table->string('zip');    
+            $table->boolean('is_main');
             $table->timestamps();
+
+            // foreign keys
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
