@@ -4,9 +4,24 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="subtitle">A minha conta</h1>
+        <h1 class="title">A minha conta</h1>
     </div>
 </div>
+
+<div class="row centered">
+    <div class="sm col-8">
+        <h2 class="title">{{$user->name}}</h2>
+        <h3 class="subtitle">{{$user->email}}</h3>
+    </div>
+</div>
+
+<div class="row centered">
+    <div class="sm col-8">
+        <a href="" class="btn inverted">Editar Conta</a>
+    </div>
+</div>
+
+
 
 <div class="row centered">
     <div class="sm col-8">
