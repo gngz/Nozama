@@ -20,6 +20,7 @@
                 @auth
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Member Area</a></li>
                     <li><a class="btn primary"  href="#">Comprar</a></li>
+                    <li><a class="btn primary" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
                 @else
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Entrar</a></li>
                     <li><a class="btn primary"  href="{{ route('register') }}">Registar</a></li>
