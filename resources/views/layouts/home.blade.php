@@ -18,7 +18,7 @@
             <a class="logo" href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
             <ul>
                 @auth
-                    <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Member Area</a></li>
+                    <li><a class="btn inverted" href="{{ route('login') }}"><i class="fas fa-user"></i> Minha Conta</a></li>
                     <li><a class="btn primary"  href="#">Comprar</a></li>
                     <li><a class="btn primary" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
                 @else
