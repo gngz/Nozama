@@ -28,6 +28,17 @@
         <p>{{ Auth::user()->roles }}</p>
     </div>
 </div>
+
+
+<div class="row centered">
+    <div class="sm col-8 row space wrap btn-row ">
+        <a href="#"><button class="btn flat-primary btn-option">Procurar</button></a>
+        <a href="#"><button class="btn flat-primary btn-option">Comprar</button></a>
+        <a href="#"><button class="btn flat-primary btn-option">Minhas Propostas</button></a>
+        <a href="#"><button class="btn flat-primary btn-option">Moradas</button></a>
+    </div>
+</div>
+
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
