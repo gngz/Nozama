@@ -21,7 +21,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 
 Route::prefix('account')->middleware('auth')->group(function() { 
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'AccountController@index')->name('account');
     addressPrefix();
 
 });
