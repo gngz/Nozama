@@ -32,6 +32,14 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
     flex:1;
 }
 
+.gap{
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    div {
+        padding:20px 20px;
+    }
+}
 
 /*
     Gerar as classes com o tamanho da coluna.
