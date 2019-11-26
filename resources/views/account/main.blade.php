@@ -17,7 +17,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <a href="" class="btn inverted">Editar Conta</a>
+        <a href="{{ route('editAccount') }}" class="btn inverted">Editar Conta</a>
     </div>
 </div>
 

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Account;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Auth;
 
 class AccountController extends Controller
@@ -26,6 +27,11 @@ class AccountController extends Controller
     {
         $user = Auth::user();
 
-        return view('account',["user" => $user]);
+        return view('account.main',["user" => $user]);
+    }
+
+    public function edit() {
+        $user = Auth::user();
+        return view('account.edit',["user" => $user]);
     }
 }
