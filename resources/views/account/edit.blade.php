@@ -3,7 +3,7 @@
 @section('content')
 <div class="row centered">
     <div class="sm w500">
-        <h1 class="title">Editar conta.</h2>
+        <h1 class="title">Editar conta</h2>
         <h2 class="subtitle">Edite os seus dados e depois confirme usando a password atual.</h2>
     </div>
 </div>
@@ -47,23 +47,25 @@
     </div>
 </form>
 
-<div class="row centered">
-    <div class="sm w500">
-        <h2 class="title">Password</h2>
+<form method="POST" action="{{ route('register') }}">
+    @csrf
+    <div class="row centered">
+        <div class="sm w500">
+            <h2 class="title">Password</h2>
+        </div>
     </div>
-</div>
 
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="password-confirm">Password antiga</label>
-            <input id="password-confirm" type="password" class="input" name="password_confirmation" required autocomplete="new-password" placeholder="Volte a introduzir a password.">
+            <input id="password-old" type="password" class="input" name="passowrd-old" required autocomplete="new-password" placeholder="Introduza a sua password antiga.">
         </div>
     </div>
 
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="password">Password</label>
-            <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Introduza uma password.">
+            <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Introduza uma password nova.">
             @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -75,7 +77,7 @@
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="password-confirm">Confirmar password</label>
-            <input id="password-confirm" type="password" class="input" name="password_confirmation" required autocomplete="new-password" placeholder="Volte a introduzir a password.">
+            <input id="password-confirm" type="password" class="input" name="password-confirm" required autocomplete="new-password" placeholder="Volte a introduzir a password nova.">
         </div>
     </div>
 
@@ -85,7 +87,8 @@
             <button type="submit" class="btn primary btn-md w100">Modificar</button>
         </div>
     </div>
-
+</form>
+<br>
 
 
 
