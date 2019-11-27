@@ -44,7 +44,7 @@
                 </ul>
             </div>
             <div class="copyright">
-                <p>Copyright Ⓒ Nozama 2019 - Todos os direitos reservados.</p>
+                <p>Copyright Ⓒ Nozama {{date("Y")}} - Todos os direitos reservados.</p>
             </div>
         </footer>
 

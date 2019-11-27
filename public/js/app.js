@@ -8,7 +8,7 @@ $('#hamburguer').click(function() {
 });
 
 $(window).resize(function () {
-  if ($(window).width() < 800) {
+  if ($(window).width() <= 800) {
     $('.navbar ul a').removeClass('btn');
   } else {
     $('.navbar ul a').addClass('btn'); 
