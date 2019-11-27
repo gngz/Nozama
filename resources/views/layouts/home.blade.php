@@ -3,6 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Marketplace fictício orientado ao comprador. Projeto da cadeira de Aplicações Centradas em Redes da Universidade da Madeira 2019/2020.">
+        <meta name="keywords" content="marketplace,buy,sell,shop,shopping">
+
+        <meta property="og:title" content="Nozama">
+        <meta property="og:description" content="Marketplace fictício orientado ao comprador. Projeto da cadeira de Aplicações Centradas em Redes da Universidade da Madeira 2019/2020.">
+        <meta property="og:image" content="{{ asset('img/logo.png') }}">
+        <meta name="twitter:card" content="summary_large_image">
+
 
         <title>{{ config('app.name', 'Nozama') }}</title>
 
