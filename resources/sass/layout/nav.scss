@@ -6,14 +6,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+
+    position: relative;
 
     padding-left: 10%;
     padding-right: 10%;
 
-    a {
-        text-decoration: none;
+     a {
+        text-decoration: none ;
+        color: white;
+
     }
+
     
     .btn {
         font-size: 18px;
@@ -30,12 +34,66 @@
     }
 }
 
-// remove icons from navbar buttons
-@media only screen and (max-width: 650px) {
-    .navbar .btn i{
-        display: none;
-    }
+#hamburguer {
+    display:none !important;
+}
 
-  
+#logout {
+    span {
+        display:none;
+    }
+}
+
+
+
+// remove icons from navbar buttons
+@media only screen and (max-width: 800px) {
+
+    #logout {
+        span {
+            display: inline;
+        }
+    }
+  .navbar ul {
+      margin: 0;
+      padding: 10px 0;
+      position: absolute;
+      display: none;
+
+      left: 0;
+      right: 0;
+      top: 100%;
+      background-color:  $dark-blue;
+
+    a {
+        padding: 10px 0;
+        display:block !important;
+         text-align: center;
+
+         &:hover{
+            background-color: $dark;
+        }
+
+      }
+
+      li {
+          margin-left: 0px;
+      }
+
+      &.responsive {
+          display: inline !important;
+      }
+
+      .icon {
+          display: none;
+      }
+
+  }
+
+  #hamburguer {
+    display: inline !important;
+  }
+
 
 } 
+
