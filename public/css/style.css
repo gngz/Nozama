@@ -99,13 +99,14 @@
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  flex-wrap: wrap;
+  position: relative;
   padding-left: 10%;
   padding-right: 10%;
 }
 
 .navbar a {
   text-decoration: none;
+  color: white;
 }
 
 .navbar .btn {
@@ -123,9 +124,54 @@
   display: flex;
 }
 
-@media only screen and (max-width: 650px) {
-  .navbar .btn i {
+#hamburguer {
+  display: none !important;
+}
+
+#logout span {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  #logout span {
+    display: inline;
+  }
+
+  .navbar ul {
+    margin: 0;
+    padding: 10px 0;
+    position: absolute;
     display: none;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: #22333b;
+  }
+
+  .navbar ul a {
+    padding: 10px 0;
+    display: block !important;
+    text-align: center;
+  }
+
+  .navbar ul a:hover {
+    background-color: #191919;
+  }
+
+  .navbar ul li {
+    margin-left: 0px;
+  }
+
+  .navbar ul.responsive {
+    display: inline !important;
+  }
+
+  .navbar ul .icon {
+    display: none;
+  }
+
+  #hamburguer {
+    display: inline !important;
   }
 }
 
