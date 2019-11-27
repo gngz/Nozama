@@ -3,7 +3,7 @@
 $('#hamburguer').click(function() {
 
   var navlist = $('.navbar ul');
-  navlist.toggleClass("responsive");
+  navlist.toggleClass("responsive", 500);
   
 });
 

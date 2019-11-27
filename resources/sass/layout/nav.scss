@@ -58,7 +58,10 @@
       margin: 0;
       padding: 10px 0;
       position: absolute;
-      display: none;
+
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.1s ease-in ;
 
       left: 0;
       right: 0;
@@ -82,6 +85,8 @@
 
       &.responsive {
           display: inline !important;
+          visibility: visible;
+          opacity: 1;
       }
 
       .icon {
