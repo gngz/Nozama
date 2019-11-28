@@ -15,12 +15,12 @@
 </div>
 
 
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('editAccountForm') }}">
     @csrf
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="name">Nome</label>
-            <input id="name" type="text" class="input @error('name') is-invalid @enderror" name="name"  required autocomplete="name" autofocus placeholder="Introduza o seu nome. e.g: José Alberto" value="{{$user->name}}">
+            <input id="name" type="text" class="input @error('name') is-invalid @enderror" name="name"   autocomplete="name" autofocus  placeholder="{{$user->name}}">
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="email">E-mail</label>
-            <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" placeholder="O seu email. e.g: utilizador@exemplo.com.">
+            <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email" placeholder="{{ $user->email }}"  autocomplete="email" >
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
     </div>
 </form>
 
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('editAccountForm') }}">
     @csrf
     <div class="row centered">
         <div class="sm w500">
@@ -57,15 +57,15 @@
 
     <div class="row centered">
         <div class="sm w500 form-field">
-            <label class="label" for="password-confirm">Password antiga</label>
-            <input id="password-old" type="password" class="input" name="passowrd-old" required autocomplete="new-password" placeholder="Introduza a sua password antiga.">
+            <label class="label" for="old_password">Password antiga</label>
+            <input id="password-old" type="password" class="input" name="old_password"  autocomplete="new-password" placeholder="Introduza a sua password antiga.">
         </div>
     </div>
 
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="password">Password</label>
-            <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Introduza uma password nova.">
+            <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password"  autocomplete="new-password" placeholder="Introduza uma password nova.">
             @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -76,8 +76,8 @@
 
     <div class="row centered">
         <div class="sm w500 form-field">
-            <label class="label" for="password-confirm">Confirmar password</label>
-            <input id="password-confirm" type="password" class="input" name="password-confirm" required autocomplete="new-password" placeholder="Volte a introduzir a password nova.">
+            <label class="label" for="password_confirmation">Confirmar password</label>
+            <input id="password-confirm" type="password" class="input" name="password_confirmation"  autocomplete="new-password" placeholder="Volte a introduzir a password nova.">
         </div>
     </div>
 

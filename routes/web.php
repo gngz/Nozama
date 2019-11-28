@@ -22,7 +22,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::prefix('account')->middleware('auth')->group(function() { 
     Route::get('/', 'Account\AccountController@index')->name('account');
-    Route::get('/edit', 'Account\AccountController@edit')->name('editAccount');
+    Route::get('/edit', 'Account\AccountController@edit')->name('editAccount'); 
+    Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm'); 
     addressPrefix();
 
 });
