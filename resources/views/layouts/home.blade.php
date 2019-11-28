@@ -11,6 +11,9 @@
         <meta property="og:image" content="{{ asset('img/logo.png') }}">
         <meta name="twitter:card" content="summary_large_image">
 
+       
+
+
 
         <title>{{ config('app.name', 'Nozama') }}</title>
 
@@ -20,6 +23,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nozama.css') }}">
+        @yield('extra-css')
+
+        
     </head>
     <body>
         <nav class="navbar">
@@ -33,6 +39,7 @@
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="icon fas fa-user"></i> Entrar</a></li>
                     <li><a class="btn primary"  href="{{ route('register') }}">Registar</a></li>
                 @endauth
+
                 
                 
             </ul>
@@ -58,5 +65,6 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
+        @yield('extra-js')
     </body>
 </html>

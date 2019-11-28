@@ -48,7 +48,7 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
 
 @for $i from 1 through $num_cols  {
     .col-#{$i} {
-        overflow: hidden;
+      //  overflow: hidden;
         flex-basis: 100% * ($i / $num_cols);
 
     }

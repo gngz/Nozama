@@ -272,52 +272,42 @@
 */
 
 .col-1 {
-  overflow: hidden;
   flex-basis: 10%;
 }
 
 .col-2 {
-  overflow: hidden;
   flex-basis: 20%;
 }
 
 .col-3 {
-  overflow: hidden;
   flex-basis: 30%;
 }
 
 .col-4 {
-  overflow: hidden;
   flex-basis: 40%;
 }
 
 .col-5 {
-  overflow: hidden;
   flex-basis: 50%;
 }
 
 .col-6 {
-  overflow: hidden;
   flex-basis: 60%;
 }
 
 .col-7 {
-  overflow: hidden;
   flex-basis: 70%;
 }
 
 .col-8 {
-  overflow: hidden;
   flex-basis: 80%;
 }
 
 .col-9 {
-  overflow: hidden;
   flex-basis: 90%;
 }
 
 .col-10 {
-  overflow: hidden;
   flex-basis: 100%;
 }
 
