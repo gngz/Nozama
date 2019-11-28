@@ -51,6 +51,7 @@ footer {
 .content {
     min-height: calc(100vh - 299px);
     padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .btn-option {
