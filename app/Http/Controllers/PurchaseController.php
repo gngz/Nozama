@@ -12,6 +12,8 @@ class PurchaseController extends Controller
 {
 
     function add(Request $request,  Image $imageRepo) {
+
+        // TODO validar
        // $path = $request->file('imageUpload')->store('images');
        
        $purchase = new Purchase();

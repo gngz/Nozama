@@ -40,11 +40,11 @@
             <div class="row gap">
                 <div class="sm col">
                     <label class="label" for="minPrice">Preço Minimo <strong>(opcional)</strong></label>
-                    <input id="minPrice" type="number" class="input @error('name') is-invalid @enderror" name="minPrice"    placeholder="Insiria um título descritivo da sua compra.">
+                    <input id="minPrice" type="number" class="input @error('name') is-invalid @enderror" name="minPrice"    placeholder="Insira o preço mínimo disposto a pagar.">
                 </div>
                 <div class="sm col">
                     <label class="label" for="maxPrice">Preço Máximo <strong>(opcional)</strong></label>
-                    <input id="maxPrice" type="number" class="input @error('name') is-invalid @enderror" name="maxPrice"     placeholder="Insiria um título descritivo da sua compra.">
+                    <input id="maxPrice" type="number" class="input @error('name') is-invalid @enderror" name="maxPrice"     placeholder="Insira o preço máximo que está disposto a pagar.">
                 </div>
             </div>
     </div>
