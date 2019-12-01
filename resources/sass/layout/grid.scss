@@ -1,12 +1,10 @@
 $num_cols: 10; // numero de colunas
 $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone)
 
-
 .row {
     display: flex;
     width: 100%;
 }
-
 
 .row.centered{
     justify-content: center;

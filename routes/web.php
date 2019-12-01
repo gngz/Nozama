@@ -20,20 +20,17 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 
-Route::prefix('account')->middleware('auth')->group(function() { 
+Route::prefix('account')->middleware('auth')->group(function() {
     Route::get('/', 'Account\AccountController@index')->name('account');
-    Route::get('/edit', 'Account\AccountController@edit')->name('editAccount'); 
-    Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm'); 
+    Route::get('/edit', 'Account\AccountController@edit')->name('editAccount');
+    Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm');
     addressPrefix();
 
 });
 
-
 function addressPrefix() {
     Route::prefix('address')->group(function() {
-        Route::get('/', function () {
-            dd("xD");
-        });
+        Route::get('/', 'Address\AddressController@index')->name('addressList');
     });
 }
 
