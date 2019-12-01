@@ -70,6 +70,7 @@ footer .copyright {
   margin: 20px;
 }
 
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   /* this adds the "card" effect */
@@ -78,5 +79,10 @@ footer .copyright {
   background-color: #f1f1f1;
   border: solid 1px orange;
   min-height: 290px;
+}
+
+#editor {
+  height: 250px;
+
 }
 
