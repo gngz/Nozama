@@ -54,7 +54,7 @@
                     <a href="#"><button class="btn flat-primary btn-option">Minhas Propostas</button></a>
             </div>
             <div class="sm col">
-                <a href="#"><button class="btn flat-primary btn-option">Moradas</button></a>
+                <a href="{{ route('addressList') }}"><button class="btn flat-primary btn-option">Moradas</button></a>
             </div>
         </div>
     </div>

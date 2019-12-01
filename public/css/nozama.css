@@ -3,7 +3,7 @@
 }
 
 .hero.img {
-  background-image: url(/images/hero.svg?1ab9d9bcd68103522c810f6662526397);
+  background-image: url(/images/hero.svg?358d43d592932d2adf17a263cd8c880a);
   background-repeat: no-repeat;
   background-position: 85%;
   background-size: contain 100px;
@@ -70,7 +70,19 @@ footer .copyright {
   margin: 20px;
 }
 
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: solid 1px orange;
+  min-height: 290px;
+}
+
 #editor {
   height: 250px;
+
 }
 

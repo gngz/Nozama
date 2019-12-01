@@ -1,16 +1,16 @@
 @import "layout/colors.scss";
 
 .hero.img {
-    
+
     background-image: url("img/hero.svg");
     background-repeat: no-repeat;
     background-position: 85%;
     background-size: contain 100px;
 
     @media only screen and (max-width: 1250px) {
-        
+
         background-image: none;
-    } 
+    }
 }
 
 footer {
@@ -68,6 +68,16 @@ footer {
     }
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border: solid 1px orange;
+    min-height: 290px;
+}
+
 #editor {
     height: 250px;
 }
+
