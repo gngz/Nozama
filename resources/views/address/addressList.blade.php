@@ -9,15 +9,11 @@
 </div>
 
 <div class="row centered">
-    <div class="sm col-10">
+    <div class="sm col-8">
         <div class="row space wrap gap">
             <!-- Adicionar novo endereço -->
-            <div class="sm col-3">
-                <div class="card">
-                    <a href="">
-                        <h3>Adicionar Novo Endereço</h3>
-                    </a>
-                </div>
+            <div class="sm col">
+                <button class="plus-button"></button>
             </div>
             <!-- Endereços na BD-->
             <div class="sm col-3">

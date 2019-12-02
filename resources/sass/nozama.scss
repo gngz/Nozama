@@ -73,11 +73,49 @@ footer {
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
-    border: solid 1px orange;
+    border: solid 1px #F18904;
     min-height: 290px;
 }
 
 #editor {
     height: 250px;
+}
+
+.plus-button {
+	border: 2px solid #F18904;
+	background-color: #f1f1f1;
+	font-size: 75px;
+	height: 3.5em;
+	width: 3.5em;
+	border-radius: 999px;
+    position: relative;
+    text-align: center;
+    margin: 10%;
+
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color: black;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&:before {
+		height: 1em;
+		width: 0.2em;
+	}
+
+	&:after {
+		height: 0.2em;
+		width: 1em;
+    }
+
+    &:hover {
+        background-color: #F18904;
+        border: solid 2px black;
+    }
 }
 
