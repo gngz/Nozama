@@ -92,7 +92,6 @@ footer .copyright {
   width: 3.5em;
   border-radius: 999px;
   position: relative;
-  text-align: center;
   margin: 10%;
 }
 
@@ -100,7 +99,7 @@ footer .copyright {
 .plus-button:before {
   content: "";
   display: block;
-  background-color: black;
+  background-color: #F18904;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -120,6 +119,28 @@ footer .copyright {
 
 .plus-button:hover {
   background-color: #F18904;
-  border: solid 2px black;
+  border: solid 2px white;
+}
+
+.plus-button:hover:after,
+.plus-button:hover:before {
+  content: "";
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.plus-button:hover:before {
+  height: 1em;
+  width: 0.2em;
+}
+
+.plus-button:hover:after {
+  height: 0.2em;
+  width: 1em;
 }
 

@@ -12,11 +12,12 @@
     <div class="sm col-8">
         <div class="row space wrap gap">
             <!-- Adicionar novo endereço -->
-            <div class="sm col">
-                <button class="plus-button"></button>
+            <div class="sm col-4">
+                 {{-- {{ route('add') }}  --}}
+                <a href=""><button class="plus-button"></button></a>
             </div>
             <!-- Endereços na BD-->
-            <div class="sm col-3">
+            <div class="sm col-4">
                 <div class="card">
                     <h3>Henrique Sousa</h3>
                     <p>Estrada De Cima Em Baixo, nº88</p>
@@ -28,7 +29,7 @@
                     <button class="btn inverted">Definir como Principal</button>
                 </div>
             </div>
-            <div class="sm col-3">
+            <div class="sm col-4">
                 <div class="card">
                     <h3>Henrique Sousa</h3>
                     <p>Estrada De Cima Em Baixo, nº88</p>
@@ -40,7 +41,7 @@
                     <button class="btn inverted">Definir como Principal</button>
                 </div>
             </div>
-            <div class="sm col-3">
+            <div class="sm col-4">
                 <div class="card">
                     <h3>Henrique Sousa</h3>
                     <p>Estrada De Cima Em Baixo, nº88</p>
