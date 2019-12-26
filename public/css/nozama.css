@@ -80,6 +80,14 @@ footer .copyright {
   min-height: 290px;
 }
 
+.card-plus {
+  padding: 16px;
+  text-align: center;
+  background-color: #ffff;
+  min-height: 250px;
+  max-height: 290px;
+}
+
 #editor {
   height: 250px;
 }

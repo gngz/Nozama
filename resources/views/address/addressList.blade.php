@@ -14,7 +14,9 @@
             <!-- Adicionar novo endereço -->
             <div class="sm col-4">
                  {{-- {{ route('add') }}  --}}
-                <a href=""><button class="plus-button"></button></a>
+                <div class="card-plus">
+                    <a href=""><button class="plus-button"></button></a>
+                </div> 
             </div>
             <!-- Endereços na BD-->
             <div class="sm col-4">
