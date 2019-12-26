@@ -18,4 +18,8 @@ class AddressController extends Controller
     public function index(){
         return view('address.addressList');
     }
+
+    public function add(){
+        return view('address.add');
+    }
 }
