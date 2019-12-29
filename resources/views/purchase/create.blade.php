@@ -18,7 +18,7 @@
 <div class="row centered">
     <div class="sm col-8 form-field">
         <label class="label" for="title">Titulo</label>
-        <input id="title" type="text" class="input @error('name') is-invalid @enderror" name="title"  placeholder="Insiria um título descritivo da sua compra.">
+    <input id="title" type="text" class="input @error('name') is-invalid @enderror" name="title"  placeholder="Insira um título descritivo da sua compra." value="{{ old('title')}}">
         @error('title')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -39,11 +39,11 @@
             <div class="row gap">
                 <div class="sm col">
                     <label class="label" for="minPrice">Preço Minimo <strong>(opcional)</strong></label>
-                    <input id="minPrice" type="number" class="input @error('name') is-invalid @enderror" name="minPrice"    placeholder="Insira o preço mínimo disposto a pagar.">
+                    <input id="minPrice" type="number" class="input @error('name') is-invalid @enderror" name="minPrice"    placeholder="Insira o preço mínimo disposto a pagar." value="{{ old('minPrice') }}" >
                 </div>
                 <div class="sm col">
                     <label class="label" for="maxPrice">Preço Máximo <strong>(opcional)</strong></label>
-                    <input id="maxPrice" type="number" class="input @error('name') is-invalid @enderror" name="maxPrice"     placeholder="Insira o preço máximo que está disposto a pagar.">
+                    <input id="maxPrice" type="number" class="input @error('name') is-invalid @enderror" name="maxPrice"     placeholder="Insira o preço máximo que está disposto a pagar." value="{{ old('maxPrice') }}">
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
 <div class="row centered">
     <div class="sm col-8">
         <label class="label" for="imageUpload">Imagens</label>
-        <input type="file" name="imageUpload[]" id="fileToUpload" multiple>
+        <input type="file" name="imageUpload[]" id="fileToUpload" multiple value="{{ old('imageUpload') }}">
 
     </div>
 </div>
