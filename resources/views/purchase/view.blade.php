@@ -87,6 +87,7 @@
     <div class="row centered">
         <div class="sm col-8">
             <a href="{{ url('/purchase/delete/'. $purchase->id )}}" class="btn primary">Eliminar Compra</a>
+            <a href="{{ url('/purchase/edit/'. $purchase->id )}}" class="btn primary">Editar Compra</a>
         </div>
     </div>
 
