@@ -1,0 +1,18 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+.text-center {
+  text-align: center;
+}
+/*# sourceMappingURL=text.css.map */

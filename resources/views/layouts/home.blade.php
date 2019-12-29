@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nozama.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/adPage.css') }}">
         @yield('extra-css')
 
         

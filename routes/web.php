@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
+Route::get('/ad', function(){
+    return view('./ad/adPage');
+});
+
 
 Route::prefix('account')->middleware('auth')->group(function() {
     Route::get('/', 'Account\AccountController@index')->name('account');
