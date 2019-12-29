@@ -19,10 +19,11 @@ class CreateAddressesTable extends Migration
             $table->text('address_extra');
 
             $table->string('phone')->nullable();  //this can be nullable
-            $table->string('name');    
-            $table->string('city');    
-            $table->string('region');    
-            $table->string('zip');    
+            $table->string('name');
+            $table->string('city');
+            $table->string('region');
+            $table->string('zip');
+            $table->string('country');
             $table->boolean('is_main');
             $table->timestamps();
 
