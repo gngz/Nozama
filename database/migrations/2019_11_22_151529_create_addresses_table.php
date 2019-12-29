@@ -24,7 +24,7 @@ class CreateAddressesTable extends Migration
             $table->string('region');
             $table->string('zip');
             $table->string('country');
-            $table->boolean('is_main', false);
+            $table->boolean('is_main')->default('0');
             $table->timestamps();
 
             // foreign keys

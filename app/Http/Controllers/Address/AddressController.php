@@ -36,7 +36,18 @@ class AddressController extends Controller
     }
 
     public function addAdress(Request $request){
-        
+        // validação para introdução de valores na base de dados
+       /*  $validatedData = $request->validate([
+            'name' => 'required|string|max:30',
+            'address' => 'required|string',
+            'address_extra' => 'nullable|numeric',
+            'city' => 'nullable|numeric',
+            'zip' => 'required|numeric',
+            'region' => 'required|numeric',
+            'country' => 'required|numeric',
+            'phone' => 'nullable|numeric',
+        ]); */
+
         $address = new Address();
         
         $address->user_id = Auth::User()->id;
@@ -51,9 +62,5 @@ class AddressController extends Controller
         $address->phone = $request->phone;
 
         $address->save();  
-
-        //dd($address);
-
-        return redirect('/account/address/');
     }
 }
