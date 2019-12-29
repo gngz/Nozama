@@ -11,6 +11,8 @@
 |
 */
 
+use App\Address;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,7 +34,7 @@ Route::prefix('account')->middleware('auth')->group(function() {
 
 });
 
-Route::prefix('purchase')->group(function() { 
+Route::prefix('purchase')->group(function() {
    // Route::get('/', 'Account\AccountController@index')->name('account');
     Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase'); 
     Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases'); 
@@ -53,6 +55,8 @@ Route::prefix('util')->group(function() {
 function addressPrefix() {
     Route::prefix('address')->group(function() {
         Route::get('/', 'Address\AddressController@index')->name('addressList');
+        Route::get('/add', 'Address\AddressController@add')->name('addAddress');
+        Route::post('/add', 'Address\AddressController@addAdress')->name('addNewAddress');
     });
 }
 
