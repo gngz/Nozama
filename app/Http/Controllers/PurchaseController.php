@@ -76,6 +76,8 @@ class PurchaseController extends Controller
 
     function edit(Request $request,  Image $imageRepo) {
 
+      
+
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
@@ -89,7 +91,15 @@ class PurchaseController extends Controller
         // TODO validar
        // $path = $request->file('imageUpload')->store('images');
        
+       $user = Auth::User();
        $purchase = Purchase::find($request->id);
+
+        if($purchase) {
+            if($user->id != $purchase->user_id) {
+          
+                return redirect("/purchase");
+            }
+        }
        
        $purchase->title = $request->title;
        $purchase->description = $request->description;
