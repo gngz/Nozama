@@ -47,6 +47,7 @@ function addressPrefix() {
     Route::prefix('address')->group(function() {
         Route::get('/', 'Address\AddressController@index')->name('addressList');
         Route::get('/add', 'Address\AddressController@add')->name('addAddress');
+        Route::post('/add', 'Address\AddressController@addAdress')->name('addNewAddress');
     });
 }
 

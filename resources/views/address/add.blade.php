@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('addNewAddress') }}">
         @csrf
         <!-- Nome Completo -->
         <div class="row centered">
@@ -83,6 +83,18 @@
                 @enderror
             </div>
         </div>
+        <!-- País -->
+        <div class="row centered">
+            <div class="sm w500 form-field">
+                <label class="label" for="country">País</label>
+                <input id="country" type="text" class="input @error('country') is-invalid @enderror" name="country" required placeholder="O seu país. e.g: Portugal">
+                @error('country')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
         <!-- Número telefónico -->
         <div class="row centered">
             <div class="sm w500 form-field">
@@ -95,8 +107,6 @@
                 @enderror
             </div>
         </div>
-
-
 
         <!-- Botão de submit do formuláro de resgisto de um endereço -->
         <div class="row centered">
