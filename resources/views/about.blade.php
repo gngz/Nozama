@@ -9,7 +9,9 @@
 </div>
 <div class="row centered">
     <div class="sm col-8">
-        <p>O Nozama é um site de vendas como os vários sites de vendas disponíveis na internet, mas centrado no Comprador. O Comprador pública o que deseja comprar e os vendedores fazem propostas de venda.</p>
+
+    <p>O Nozama é um site de vendas como os vários sites de vendas disponíveis na internet, mas centrado no Comprador. O Comprador pública o que deseja comprar e os vendedores fazem propostas de venda.</p>
+
     </div>
 </div>
 
