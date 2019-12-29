@@ -21,6 +21,36 @@ class PurchaseController extends Controller
         return view("purchase.main",['purchases' => $purchases]);
     }
 
+    function purchase(Request $request) {
+        $user = Auth::User();
+
+        $purchase = Purchase::find($request->id);
+
+        if($purchase)
+            return view("purchase.view",["user" => $user,"purchase" =>  $purchase ]);
+        
+
+        
+    }
+
+    function delete(Request $request) {
+        $user = Auth::User();
+        $purchase = Purchase::find($request->id);
+
+
+        if($purchase) {
+            if($user->id == $purchase->user_id) {
+                $purchase->delete();
+                return view("msg",["message" => "A compra foi eliminada"]);
+            }else {
+                return redirect("/purchase");
+            }
+        }
+
+        return redirect("/purchase");
+
+    }
+
     function add(Request $request,  Image $imageRepo) {
 
         // TODO validar
@@ -56,7 +86,7 @@ class PurchaseController extends Controller
            }
        }
        
-       return view("msg");
+       return view("msg", ["message" => "A compra foi adicionada!"]);
        // dd( $purchase);
     }
     //

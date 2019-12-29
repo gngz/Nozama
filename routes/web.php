@@ -32,6 +32,8 @@ Route::prefix('purchase')->group(function() {
    // Route::get('/', 'Account\AccountController@index')->name('account');
     Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase'); 
     Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases'); 
+    Route::get('/{id}', 'PurchaseController@purchase'); 
+    Route::get('/delete/{id}', 'PurchaseController@delete')->middleware('auth'); 
     Route::post('/create', 'PurchaseController@add')->middleware('auth')->name('createPurchase'); 
     //Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm'); 
 });

@@ -11,16 +11,18 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <a href="{{ route('editAccount') }}" class="btn primary">Adicionar Compra</a>
+        <a href="{{ route('createPurchase') }}" class="btn primary">Adicionar Compra</a>
     </div>
 </div>
+
+@if ($purchases->total() > 0 )
 
 
 <div class="row centered">
     <div class="sm col-8">
         <ul>
         @foreach ($purchases as $purchase)
-            <li>{{ $purchase->title }}</li>
+            <li><a href="{{url('/purchase/'.$purchase->id)}}">{{ $purchase->title }}</a></li>
         @endforeach
         </ul>
     </div>
@@ -30,12 +32,18 @@
 
     {{ $purchases->links() }}
 </div>
+@else
 
 <div class="row centered">
     <div class="sm col-8">
-        <p>{{ Auth::user()->roles }}</p>
+        <p>Ainda não possui nenhuma compra! Que tal fazer uma?</p>
     </div>
 </div>
+
+@endif
+
+
+
 
 
 @endsection
