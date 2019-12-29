@@ -14,7 +14,7 @@
             <label class="label" for="email">E-mail</label>
             <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="e.g: nome@exemplo.com.">
             @error('email')
-                <span class="invalid-feedback"" role="alert">
+                <span class="invalid-feedback" role="alert">
                     {{ $message }}
                 </span>
             @enderror

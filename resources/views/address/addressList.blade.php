@@ -18,81 +18,22 @@
                 </div>
             </div>
             <!-- Endereços na BD-->
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
+            @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
+                <div class="sm col-4">
+                    <div class="card">
+                        <h3>{{ $data->name }}</h3>
+                        <p>{{ $data->address }}, {{ $data->address_extra}}</p>
+                        <p>{{ $data->city }}</p>
+                        <p>{{ $data->zip}} {{ $data->region }}</p>
+                        <p>{{ $data->country }}</p>
+                        <p>Telemóvel: {{ $data->phone }}</p>
+                        <button class="btn primary">Editar</button>
+                        <button class="btn inverted">Definir como Principal</button>
+                    </div>
                 </div>
-            </div>
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div>
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div>
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div>
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div>
-            <div class="sm col-4">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada De Cima Em Baixo, nº88</p>
-                    <p>Estreito de Câmara de Lobos</p>
-                    <p>9870-341 Câmara de Lobos</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 980978567</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div>
+            @endforeach
 
         </div>
-
     </div>
 </div>
 

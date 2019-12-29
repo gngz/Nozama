@@ -6,6 +6,7 @@ use App\Address;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Auth;
 
 class AddressController extends Controller
@@ -26,7 +27,8 @@ class AddressController extends Controller
      * @return void
      */
     public function index(){
-        return view('address.addressList');
+        $address = DB::table('addresses')->get();
+        return view('address.addressList',['address' => $address]);
     }
 
     public function add(){
@@ -51,5 +53,7 @@ class AddressController extends Controller
         $address->save();  
 
         //dd($address);
+
+        return redirect('/account/address/');
     }
 }
