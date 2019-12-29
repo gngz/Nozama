@@ -66,11 +66,18 @@ class PurchaseController extends Controller
     function viewEdit(Request $request) {
 
         $purchase = Purchase::find($request->id);
+        $user = Auth::User();
         //dd($purchase);
         if($purchase) {
+            if($user->id != $purchase->user_id) {
+          
+                return redirect("/purchase");
+            }
             return view("purchase.create", ["purchase" => $purchase]);
         }
         
+        
+       
     }
 
 
