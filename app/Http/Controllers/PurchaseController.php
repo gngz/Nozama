@@ -58,6 +58,16 @@ class PurchaseController extends Controller
 
     function add(Request $request,  Image $imageRepo) {
 
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'max_price' => 'nullable|numeric',
+            'min_price' => 'nullable|numeric',
+            'category' => 'required|numeric',
+            'subcategory' => 'required|numeric',
+    
+        ]);
+
         // TODO validar
        // $path = $request->file('imageUpload')->store('images');
        
@@ -91,7 +101,8 @@ class PurchaseController extends Controller
            }
        }
        
-       return view("msg", ["message" => "A compra foi adicionada!"]);
+       return redirect("/purchase/".$purchase->id);
+       //return view("msg", ["message" => "A compra foi adicionada!"]);
        // dd( $purchase);
     }
     //

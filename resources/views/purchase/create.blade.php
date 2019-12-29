@@ -32,9 +32,8 @@
             <div id="editor">
             </div>
     </div>
+    
 </div>
-<br>
-
 <div class="row centered">
     <div class="sm col-8">
             <div class="row gap">
@@ -47,6 +46,17 @@
                     <input id="maxPrice" type="number" class="input @error('name') is-invalid @enderror" name="maxPrice"     placeholder="Insira o preço máximo que está disposto a pagar.">
                 </div>
             </div>
+
+            @error('max_price')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            @error('min_price')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
     </div>
 </div>
 
@@ -58,10 +68,20 @@
                     <select name="category" id="category">
                         <option value="" selected>Selecionar</option>
                     </select>
+                    @error('category')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="sm col">
                     <label class="label" for="name">Sub-Categoria</label>
                     <select name="subcategory" id="subcategory" disabled="disabled"></select>
+                    @error('subcategory')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
             </div>
     </div>
