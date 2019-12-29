@@ -9,6 +9,12 @@
 </div>
 
 
+<div class="row centered">
+    <div class="sm col-8">
+        <a href="{{ route('editAccount') }}" class="btn primary">Adicionar Compra</a>
+    </div>
+</div>
+
 
 <div class="row centered">
     <div class="sm col-8">
@@ -22,7 +28,7 @@
 
 <div class="row centered">
 
-    {{ $purchases->render() }}
+    {{ $purchases->links() }}
 </div>
 
 <div class="row centered">
