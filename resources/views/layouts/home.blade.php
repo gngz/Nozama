@@ -51,7 +51,7 @@
         <footer>
             <div class="footer">
                 <ul>
-                    <li>Sobre Nós</li>
+                    <li><a href="{{url("/about")}}">Sobre Nós</a></li>
                     <li>|</li>
                     <li>Termos de Utilização</li>
                     <li>|</li>

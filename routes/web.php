@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/about', 'about');
+Route::view('/terms', 'terms');
+
+
 Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');

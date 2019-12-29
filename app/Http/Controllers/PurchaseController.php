@@ -31,6 +31,8 @@ class PurchaseController extends Controller
         if($purchase) {
             $images = $purchase->images();
             return view("purchase.view",["user" => $user,"purchase" =>  $purchase, "images" => $images]);
+        } else {
+            return redirect("/purchase");
         }
             
         
