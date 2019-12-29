@@ -11,4 +11,8 @@ class Purchase extends Model
        // dd($this->hasOne('App\Category',"id","category_id"));
         return $this->hasOne('App\Category',"id","category_id");
     }
+
+    function images() {
+        return $this->hasMany('App\Image',"purchase_id", "id");
+    }
 }

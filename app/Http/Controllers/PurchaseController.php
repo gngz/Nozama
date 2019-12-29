@@ -17,6 +17,7 @@ class PurchaseController extends Controller
         $user = Auth::User();
 
         $purchases = $user->purchases()->paginate(10);
+
         //dd();
         return view("purchase.main",['purchases' => $purchases]);
     }
@@ -26,8 +27,12 @@ class PurchaseController extends Controller
 
         $purchase = Purchase::find($request->id);
 
+        $images = $purchase->images();
+
+        //dd($images);
+
         if($purchase)
-            return view("purchase.view",["user" => $user,"purchase" =>  $purchase ]);
+            return view("purchase.view",["user" => $user,"purchase" =>  $purchase, "images" => $images]);
         
 
         
