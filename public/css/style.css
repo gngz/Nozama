@@ -454,6 +454,17 @@
   margin-bottom: 20px;
 }
 
+.pagination {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.page-item {
+  display: inline;
+}
+
 html,
 body {
   margin: 0;
