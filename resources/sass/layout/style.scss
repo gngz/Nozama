@@ -7,9 +7,14 @@
 @import 'grid.scss'; // grid scss
 @import 'form.scss'; // form scss
 @import 'utils.scss'; // utils scss
+@import 'pagination.scss'; // utils scss
 
 // removing margins
 html, body {
     margin:0;
 }
 
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}

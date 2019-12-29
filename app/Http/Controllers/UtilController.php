@@ -17,9 +17,13 @@ class UtilController extends Controller
 
     function getSubcategories(Request $request ,Category $categoriesRepo) {
 
-        $subcategories = $categoriesRepo::find($request->id)->subcategories;
-
         
+        $category = $categoriesRepo::find($request->id);
+        $subcategories = array();
+
+        if($category) {
+            $subcategories = $category->subcategories;
+        }
 
         return response()->json($subcategories);
     }

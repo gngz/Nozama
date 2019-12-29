@@ -33,7 +33,7 @@
             <ul>
                 @auth
                     <li><a class="btn inverted" href="{{ route('account') }}"><i class="icon fas fa-user"></i> Minha Conta</a></li>
-                    <li><a class="btn primary"  href="#">Comprar</a></li>
+                    <li><a class="btn primary"  href="{{ route('createPurchase') }}">Comprar</a></li>
                     <li><a class="btn primary" href="{{ route('logout') }}" id="logout"><i class="icon fas fa-sign-out-alt"></i><span>Sair</span></a></li>
                 @else
                     <li><a class="btn inverted" href="{{ route('login') }}"><i class="icon fas fa-user"></i> Entrar</a></li>
@@ -51,7 +51,7 @@
         <footer>
             <div class="footer">
                 <ul>
-                    <li>Sobre Nós</li>
+                    <li><a href="{{url("/about")}}">Sobre Nós</a></li>
                     <li>|</li>
                     <li>Termos de Utilização</li>
                     <li>|</li>
