@@ -124,17 +124,18 @@ class PurchaseController extends Controller
 
        $purchase->save();
 
-       $cImages = $purchase->images;
-
-       foreach($cImages as $image) {
-        Storage::delete($image->path);
-        $image->delete();
-       }
+  
 
 
        if($request->hasFile('imageUpload'))
        {
 
+            $cImages = $purchase->images;
+
+            foreach($cImages as $image) {
+                Storage::delete($image->path);
+                $image->delete();
+            }
          
 
            $files = $request->file('imageUpload');
