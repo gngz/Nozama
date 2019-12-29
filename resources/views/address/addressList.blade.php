@@ -15,8 +15,8 @@
             <div class="sm col-4">
                  {{-- {{ route('add') }}  --}}
                 <div class="card-plus">
-                    <a href=""><button class="plus-button"></button></a>
-                </div> 
+                <a href="{{ route('addAddress') }}"><button class="plus-button"></button></a>
+                </div>
             </div>
             <!-- Endereços na BD-->
             <div class="sm col-4">
