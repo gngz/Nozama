@@ -27,12 +27,12 @@ class PurchaseController extends Controller
 
         $purchase = Purchase::find($request->id);
 
-        $images = $purchase->images();
 
-        //dd($images);
-
-        if($purchase)
+        if($purchase) {
+            $images = $purchase->images();
             return view("purchase.view",["user" => $user,"purchase" =>  $purchase, "images" => $images]);
+        }
+            
         
 
         
@@ -44,7 +44,7 @@ class PurchaseController extends Controller
 
 
         if($purchase) {
-            if($user->id == $purchase->user_id) {
+            if($user->id == $purchase->user_id || $user->role == "admin") {
                 $purchase->delete();
                 return view("msg",["message" => "A compra foi eliminada"]);
             }else {
@@ -58,7 +58,7 @@ class PurchaseController extends Controller
 
     function add(Request $request,  Image $imageRepo) {
 
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'max_price' => 'nullable|numeric',
