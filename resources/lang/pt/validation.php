@@ -149,6 +149,8 @@ return [
         'title' => 'título',
         'category' => 'categoria',
         'subcategory' => 'subcategoria',
+        'subject' => 'assunto',
+        'subject' => 'mensagem',
     ],
 
 ];

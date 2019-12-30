@@ -20,7 +20,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h2 class="subtitle">Últimas Compras</h2>
+        <h2 class="subtitle">Últimas Propostas de Compra</h2>
 
         @if ($purchases->total() > 0)
             @foreach ($purchases as $purchase)
