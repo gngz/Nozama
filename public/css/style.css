@@ -29,6 +29,43 @@
   color: white;
 }
 
+.highlights{
+  
+}
+
+.contents_homepage{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2em;
+}
+
+.highlights_title{
+  text-align: center;
+  font-size: 18px;
+}
+
+.highlights_images{
+  width: 100%;
+  background-color: red;
+}
+
+.highlights_image_1{
+  flex: 33.33%;
+}
+.highlights_image_2{
+  flex: 33.33%;
+}
+.highlights_image_3{
+  flex: 33.33%;
+}
+.highlights_image_4{
+  flex: 33.33%;
+}
+.highlights_image_5{
+  flex: 33.33%;
+}
+
+
 .btn.flat-primary:hover {
   background-color: #fca12c;
 }
@@ -216,6 +253,11 @@
 .subtitle {
   font-family: "Raleway", sans-serif;
   font-weight: 200;
+}
+
+.subsubtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
 }
 
 .text-center {
