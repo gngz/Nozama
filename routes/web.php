@@ -47,6 +47,17 @@ Route::prefix('purchase')->group(function() {
 });
 
 
+Route::prefix('proposals')->group(function() {
+     Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
+});
+
+Route::prefix('profile')->group(function() {
+    Route::get('/{id}', 'ProfileController@display');
+    Route::get('/contact/{id}', 'ProfileController@contact');
+});
+ 
+
+
 Route::prefix('util')->group(function() {
     Route::get('/categories', 'UtilController@getCategories');
     Route::get('/subcategories/{id}', 'UtilController@getSubcategories');

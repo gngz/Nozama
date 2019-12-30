@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
+
+    function user() {
+        return $this->hasOne('App\User',"id","user_id");
+    }
+
     function category() {
 
        // dd($this->hasOne('App\Category',"id","category_id"));
