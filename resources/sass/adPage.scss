@@ -57,7 +57,10 @@ footer {
     padding-right: 10%;
 }
 
+//_--------------------------
+
 .ad_description_summary {
+    //row
     display: table;
     width: 100%;
     margin-top: 5%;
@@ -79,26 +82,30 @@ footer {
     padding-left: 3%;
 }
 
+//---------------------------
+
 //_________________________
 
 .bottom_half_ad_page{
+    //row
     display: table;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .comments{
     display: table-cell;
     width: 50%;
+    height: 200px;
+    text-align: justify;
+    text-justify: inter-word;
     padding-right: 3%;
-    background-color: hotpink;
 }
 
 .similar_ads{
     display: table-cell;
     width: 50%;
     padding-left: 3%;
-    background-color: green;
 }
 
 //__________________________
