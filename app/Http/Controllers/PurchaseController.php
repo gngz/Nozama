@@ -16,7 +16,7 @@ class PurchaseController extends Controller
 
         $user = Auth::User();
 
-        $purchases = $user->purchases()->paginate(10);
+        $purchases = $user->purchases()->orderBy('id','DESC')->paginate(10);
 
         //dd();
         return view("purchase.main",['purchases' => $purchases]);
