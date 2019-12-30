@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -35,6 +37,30 @@ class ProfileController extends Controller
         else {
             return view("msg",["message" => "Utilizador não encontrado."]);
         }
+
+    }
+
+    function sendMail(Request $request) {
+
+        $request->validate([
+            'subject' => 'required|string|max:255',
+            'message' => ['required','string', 
+                function ($attribute, $value, $fail) {
+                    if ($value === '<p><br></p>') {
+                        $fail(trans('validation.required'));
+                    }
+                } 
+            ],
+        ]);
+
+        $message = $request->message;
+        $subject = $request->subject;
+        $user = Auth::User();
+        $to = User::find($request->id);
+        
+        Mail::to($to)->send(new Contact($message,$user,$subject));
+        
+        return view("msg", ["message" => "Mensagem enviada com sucesso!"]);
 
     }
 }

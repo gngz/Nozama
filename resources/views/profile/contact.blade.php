@@ -15,18 +15,30 @@
 
 
 <form id="contactForm" action="" method="post">
-
+    @csrf
     <div class="row centered">
         <div class="sm col-8 form-field">
-            <input class="input" type="text" name="" id="" placeholder="Insira o assunto da sua mensagem..">
+            <input class="input" type="text" name="subject" id="" placeholder="Insira o assunto da sua mensagem..">
+            @error('subject')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
     </div>
+    
 
 
     <div class="row centered">
         <div class="sm col-8 form-field">
             <div id="editor">
             </div>
+            @error('message')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+             @enderror
+        
         </div>
         
     </div>
@@ -56,5 +68,5 @@
         placeholder: 'Insira a sua mensagem'
     });
     </script>
-    <script src="{{ asset('js/purchase.js') }}"></script>
+    <script src="{{ asset('js/contact.js') }}"></script>
 @endsection

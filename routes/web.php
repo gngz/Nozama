@@ -54,6 +54,7 @@ Route::prefix('proposals')->group(function() {
 Route::prefix('profile')->group(function() {
     Route::get('/{id}', 'ProfileController@display');
     Route::get('/contact/{id}', 'ProfileController@contact');
+    Route::post('/contact/{id}', 'ProfileController@sendMail');
 });
  
 
@@ -61,6 +62,7 @@ Route::prefix('profile')->group(function() {
 Route::prefix('util')->group(function() {
     Route::get('/categories', 'UtilController@getCategories');
     Route::get('/subcategories/{id}', 'UtilController@getSubcategories');
+    
 });
 
 function addressPrefix() {
