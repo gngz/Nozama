@@ -222,6 +222,11 @@
   text-align: center;
 }
 
+.text-focus {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
 .row {
   display: -webkit-box;
   display: flex;
@@ -463,6 +468,45 @@
 
 .page-item {
   display: inline;
+}
+
+.list {
+  border: solid 1px #999999;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.list div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.list .body {
+  padding-left: 10px;
+}
+
+.list:first-of-type {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.list:not(:first-of-type):not(:last-of-type) {
+  border-top: 0;
+}
+
+.list:last-of-type {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.list:last-of-type:not(:first-of-type) {
+  border-top: 0px;
+}
+
+.list.grey {
+  background-color: #f2f2f2;
 }
 
 html,

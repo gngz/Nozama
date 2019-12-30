@@ -15,23 +15,47 @@
     </div>
 </div>
 
+<br>
+
 @if ($purchases->total() > 0 )
 
 
 <div class="row centered">
     <div class="sm col-8">
-        <ul>
         @foreach ($purchases as $purchase)
-            <li><a href="{{url('/purchase/'.$purchase->id)}}">{{ $purchase->title }}</a></li>
+
+            <div class="list grey">
+                <div class="row">
+                    <div class="sm col body">
+        
+                        <strong class="text-focus">{{ $purchase->title }}</strong>
+                    </div>
+                    <div class="sm col-2">
+                       Total de Propostas: 0
+                    </div>
+                    <div class="sm col-1">
+                        <a class="btn primary" href="{{url('/purchase/'.$purchase->id)}}">Ver Compra</a>
+                    </div>
+                </div>
+            </div>
         @endforeach
-        </ul>
     </div>
 </div>
 
+<br>
+<div class="row centered">
+    <div class="sm col-8">
+        A mostrar {{$purchases->count()}} de {{$purchases->total()}} compras.
+    </div>
+</div>
+<br>
 <div class="row centered">
 
     {{ $purchases->links() }}
 </div>
+
+
+
 @else
 
 <div class="row centered">

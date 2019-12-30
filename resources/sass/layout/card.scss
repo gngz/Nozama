@@ -1,0 +1,40 @@
+.list {
+    border: solid 1px lighten(black, 60);;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    .body{
+        padding-left: 10px;
+    }
+}
+
+
+
+.list:first-of-type {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.list:not(:first-of-type):not(:last-of-type) {
+    border-top: 0;
+}
+
+.list:last-of-type {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+    &:not(:first-of-type) {
+        border-top: 0px;
+    }
+}
+
+
+
+.list.grey {
+    background-color: lighten(black, 95);
+}

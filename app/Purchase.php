@@ -21,4 +21,11 @@ class Purchase extends Model
     function images() {
         return $this->hasMany('App\Image',"purchase_id", "id");
     }
+
+    
+    function proposals() {
+        return $this->hasMany('App\Proposal',"purchase_id", "id");
+    }
+
+
 }

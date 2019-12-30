@@ -51,8 +51,28 @@
     </div>
 </div>
 
+@if ($purchase->max_price or $purchase->min_price)
+    <div class="row centered">
+        <div class="sm col-8">
+            <h2 class="title">Restrições</h2>
+        </div>
+    </div>
+    @if ($purchase->max_price)
+    <div class="row centered">
+        <div class="sm col-8">
+            Preço Máximo: {{$purchase->max_price}}€
+        </div>
+    </div>
+    @endif
+    @if ($purchase->min_price)
+    <div class="row centered">
+        <div class="sm col-8">
+            Preço Mínimo: {{$purchase->min_price}}€
+        </div>
+    </div>
+    @endif
 
-
+@endif
 
 
 @auth
