@@ -36,7 +36,6 @@ class AddressController extends Controller
     }
 
     public function addAdress(Request $request){
-        
         $address = new Address();
         
         $address->user_id = Auth::User()->id;
@@ -56,4 +55,16 @@ class AddressController extends Controller
 
         return redirect('/account/address/');
     }
+
+    public function edit(){
+        $address = DB::table('addresses')->get();
+        foreach($address as $key => $data){
+            $user = Auth::User();
+            if($user->id == $data->user_id){
+                return view('address.edit',['data' => $data]);
+            }
+        }
+    }
+
+
 }

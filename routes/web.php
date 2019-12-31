@@ -68,8 +68,14 @@ Route::prefix('util')->group(function() {
 function addressPrefix() {
     Route::prefix('address')->group(function() {
         Route::get('/', 'Address\AddressController@index')->name('addressList');
+
+        //adicionar um novo endereço
         Route::get('/add', 'Address\AddressController@add')->name('addAddress');
         Route::post('/add', 'Address\AddressController@addAdress')->name('addNewAddress');
+
+        //editar um endereço existente
+        Route::get('/edit', 'Address\AddressController@edit')->name('editAddress');
+        Route::post('/edit', 'Address\AddressController@editAddress')->name('editAddressForm');
     });
 }
 

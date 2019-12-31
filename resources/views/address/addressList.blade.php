@@ -26,12 +26,12 @@
                 <div class="sm col-3">
                     <div class="card">
                         <h3>{{ $data->name }}</h3>
-                        <p>{{ $data->address }}, {{ $data->address_extra}}</p>
+                        <p>{{ $data->address }} {{ $data->address_extra}}</p>
                         <p>{{ $data->city }}</p>
                         <p>{{ $data->zip}} {{ $data->region }}</p>
                         <p>{{ $data->country }}</p>
                         <p>Telemóvel: {{ $data->phone }}</p>
-                        <button class="btn primary">Editar</button>
+                        <a href="{{ route('editAddress') }}"><button class="btn primary">Editar</button></a>
                         <button class="btn inverted">Definir como Principal</button>
                     </div>
                 </div>
