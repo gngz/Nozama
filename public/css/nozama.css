@@ -3,7 +3,7 @@
 }
 
 .hero.img {
-  background-image: url(/images/hero.svg?1ab9d9bcd68103522c810f6662526397);
+  background-image: url(/images/hero.svg?358d43d592932d2adf17a263cd8c880a);
   background-repeat: no-repeat;
   background-position: 85%;
   background-size: contain 100px;
@@ -77,15 +77,20 @@ footer .copyright {
   text-align: center;
   background-color: #f1f1f1;
   border: solid 1px #F18904;
-  min-height: 290px;
+  min-height: 280px;
+  max-height: 300px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 .card-plus {
   padding: 16px;
   text-align: center;
   background-color: #ffff;
-  min-height: 250px;
-  max-height: 290px;
+  min-height: 280px;
+  max-height: 300px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 #editor {

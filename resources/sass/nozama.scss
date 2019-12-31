@@ -74,15 +74,20 @@ footer {
     text-align: center;
     background-color: #f1f1f1;
     border: solid 1px #F18904;
-    min-height: 290px;
+    min-height: 280px;
+    max-height: 300px;
+    min-width: 250px;
+    max-width: 300px;
 }
 
 .card-plus{
     padding: 16px;
     text-align: center;
     background-color: #ffff;
-    min-height: 250px;
-    max-height: 290px; 
+    min-height: 280px;
+    max-height: 300px;
+    min-width: 250px;
+    max-width: 300px; 
 }
 
 #editor {
