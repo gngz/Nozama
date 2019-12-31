@@ -6,7 +6,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="title">Proposta - {{ $purchase->title }}</h1>
+        <h1 class="title">Proposta -  <a href="{{route("viewPurchase",$purchase->id)}}">{{ $purchase->title }}</a></h1>
         <h2 class="subtitle">De: <a href="{{ url('/profile/'. $proposal->user->id) }}">{{ $proposal->user->name }}</a></h2>
     </div>
 </div>
@@ -70,7 +70,7 @@
     <div class="sm col-8">
         
         <a href="http://" class="btn primary">Editar Proposta</a>         
-        <a href="http://" class="btn inverted">Remover Proposta</a>
+        <a href="{{route("deleteProposal",$proposal->id)}}" class="btn inverted">Remover Proposta</a>
     </div>
 </div>
 @endif

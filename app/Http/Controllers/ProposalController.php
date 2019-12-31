@@ -109,12 +109,8 @@ class ProposalController extends Controller
             }
         }
 
+        return redirect(route("viewProposal",$proposal->id));
 
-       
-
-
-
-       
 
     }
 }

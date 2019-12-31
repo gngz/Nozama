@@ -49,10 +49,10 @@ Route::prefix('purchase')->group(function() {
 
 Route::prefix('proposals')->group(function() {
      Route::get('/', 'ProposalController@main')->middleware('auth')->name('viewProposals');
-     Route::get('/{id}', 'ProposalController@view')->middleware('auth'); 
+     Route::get('/{id}', 'ProposalController@view')->middleware('auth')->name('viewProposal'); 
      Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
      Route::post('/make/{id}', 'ProposalController@addProposal')->middleware('auth');
-     Route::get('/delete/{id}', 'ProposalController@delete')->middleware('auth');
+     Route::get('/delete/{id}', 'ProposalController@delete')->middleware('auth')->name('deleteProposal');
 
 });
 

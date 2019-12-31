@@ -20,7 +20,7 @@
 
             <div class="list grey">
                 <div class="row">
-                    <div class="sm col-1 body">
+                    <div class="sm col-4 body">
                         <p><span class="text-focus">Item:</span> <a href="{{ route('viewPurchase',$proposal->purchase->id) }}">{{ $proposal->purchase->title }}</a></p>
                     </div>
                     <div class="sm col-1">
