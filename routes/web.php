@@ -38,7 +38,7 @@ Route::prefix('purchase')->group(function() {
    // Route::get('/', 'Account\AccountController@index')->name('account');
     Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase'); 
     Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases'); 
-    Route::get('/{id}', 'PurchaseController@purchase'); 
+    Route::get('/{id}', 'PurchaseController@purchase')->name('viewPurchase');; 
     Route::get('/delete/{id}', 'PurchaseController@delete')->middleware('auth');
     Route::get('/edit/{id}', 'PurchaseController@viewEdit')->middleware('auth');
     Route::post('/edit/{id}', 'PurchaseController@edit')->middleware('auth');
@@ -48,14 +48,19 @@ Route::prefix('purchase')->group(function() {
 
 
 Route::prefix('proposals')->group(function() {
+     Route::get('/', 'ProposalController@main')->middleware('auth')->name('viewProposals');
+     Route::get('/{id}', 'ProposalController@view')->middleware('auth'); 
      Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
-     Route::post('/make/{id}', 'ProposalController@addProposal')->middleware('auth'); 
+     Route::post('/make/{id}', 'ProposalController@addProposal')->middleware('auth');
+     Route::get('/delete/{id}', 'ProposalController@delete')->middleware('auth');
+
 });
 
 Route::prefix('profile')->group(function() {
     Route::get('/{id}', 'ProfileController@display');
     Route::get('/contact/{id}', 'ProfileController@contact');
     Route::post('/contact/{id}', 'ProfileController@sendMail');
+    
 });
  
 

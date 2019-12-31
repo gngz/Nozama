@@ -31,7 +31,7 @@
                         <strong class="text-focus">{{ $purchase->title }}</strong>
                     </div>
                     <div class="sm col-2">
-                       Total de Propostas: 0
+                       Total de Propostas: {{ $purchase->proposals->count() }}
                     </div>
                     <div class="sm col-1">
                         <a class="btn primary" href="{{url('/purchase/'.$purchase->id)}}">Ver Compra</a>

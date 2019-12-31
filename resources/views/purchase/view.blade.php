@@ -94,6 +94,12 @@
 
     <div class="row centered">
         <div class="sm col-8">
+            <h2 class="title">Ações</h2>
+        </div>
+    </div>
+
+    <div class="row centered">
+        <div class="sm col-8">
         <a href="{{ url('/proposals/make/'. $purchase->id) }}" class="btn primary">Fazer Proposta</a> 
         <a href="{{ url('/profile/contact/'. $purchase->user->id) }}" class="btn primary">Contactar</a>
         </div>
@@ -109,7 +115,23 @@
     <div class="row centered">
         <div class="sm col-8">
             @foreach ($proposals as $proposal)
-                <p>{{ $proposal->user->name }}</p>
+            <div class="list grey">
+               <div class="row">
+                    <div class="sm col body">
+                        <strong class="text-focus">Proposta por: </strong>&ThickSpace;<a href="{{ url('/profile/'.$proposal->user->id)}}">{{ $proposal->user->name }}</a> 
+                    </div> 
+                    <div class="sm col-1">
+                        Condição: {{ $proposal->state == "used" ? "Usado" : "Novo" }}
+                     </div>
+                    <div class="sm col-1">
+                       Preço: {{ $proposal->price }}€
+                    </div>
+                    <div class="sm col-1">
+                       <a href="{{ url('/proposals/'.$proposal->id)}}" class="btn primary">Ver Proposta</a>
+                    </div>
+                   
+               </div>
+            </div>
             @endforeach
             
         </div>

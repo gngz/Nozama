@@ -10,6 +10,56 @@ use Illuminate\Support\Facades\Auth;
 
 class ProposalController extends Controller
 {
+
+    function view(Request $request) {
+        $user = Auth::User();
+        $proposal = Proposal::find($request->id);
+       
+        
+        if($proposal) {
+            $purchase = $proposal->purchase;
+            $images = $proposal->images();
+            if($user->id == $proposal->user->id or $user->id == $purchase->user->id) {
+                return view('proposal.view',['purchase' => $purchase,'proposal' => $proposal , 'images' => $images, 'user' => $user]);
+            }
+            
+        }
+       
+
+
+    }
+
+    function delete(Request $request) {
+
+        $user = Auth::User();
+
+        $proposal = Proposal::find($request->id);
+
+        if($proposal) {
+            if($proposal->user->id == $user->id) {
+                $proposal->delete();
+                return view('msg', ['message' => "Proposta removida com sucesso"]);
+            } 
+
+            
+        }
+
+        return redirect("/");
+
+        
+    }
+
+    function main(Request $request) {
+        
+        $user = Auth::User();
+
+        $proposals = $user->proposals()->orderBy('id','DESC')->paginate(10);
+
+ 
+        return view("proposal.main",['proposals' => $proposals]);
+    } 
+
+
     function make(Request $request) {
 
         $purchase = Purchase::find($request->id);
@@ -39,11 +89,12 @@ class ProposalController extends Controller
 
         $proposal->description = $request->description;
         $proposal->price = $request->price;
+        $proposal->state = $request->condition;
         $proposal->purchase_id = $purchase->id;
         $proposal->user_id = $user->id;
 
         $proposal->save();
-        
+
         if($request->hasFile('imageUpload'))
         {
  

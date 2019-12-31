@@ -40,7 +40,7 @@
                 <a href="{{ route('viewPurchases') }}"><button class="btn flat-primary btn-option">Compras</button></a>
             </div>
             <div class="sm col">
-                    <a href="#"><button class="btn flat-primary btn-option">Minhas Propostas</button></a>
+                    <a href="{{ route('viewProposals') }}""><button class="btn flat-primary btn-option">Minhas Propostas</button></a>
             </div>
             <div class="sm col">
                 <a href="{{ route('addressList') }}"><button class="btn flat-primary btn-option">Moradas</button></a>
