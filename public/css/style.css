@@ -36,7 +36,7 @@
 .contents_homepage{
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 2em;
+  padding-top: 4em;
 }
 
 .highlights_title{
@@ -44,25 +44,32 @@
   font-size: 18px;
 }
 
-.highlights_images{
+.highlights_images_container{
+  display: flex;
+  padding-top: 2em;
   width: 100%;
-  background-color: red;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
-.highlights_image_1{
+.highlights_image{
   flex: 33.33%;
+  margin: 2px;
+  position: relative;
+  text-align: center;
+  color: white;
 }
-.highlights_image_2{
-  flex: 33.33%;
-}
-.highlights_image_3{
-  flex: 33.33%;
-}
-.highlights_image_4{
-  flex: 33.33%;
-}
-.highlights_image_5{
-  flex: 33.33%;
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: slategray;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.5;
 }
 
 

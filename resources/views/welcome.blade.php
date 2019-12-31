@@ -14,21 +14,31 @@
             Destaques
         </div>
         <div class="highlights_contents">
-            <div class=highlights_images>
-                <div class=highlights_image_1>
-                    <img src="https://via.placeholder.com/200x300?text=Placeholder+Image" alt="">
+            <div class=highlights_images_container>
+
+                <div class=highlights_image>
+                    <img src="https://via.placeholder.com/260x400?text=Placeholder+Image" alt="">
+                    <div class="bottom-right">200€</div>
                 </div>
-                <div class=highlights_image_2>
-                    <img src="https://via.placeholder.com/200x300?text=Placeholder+Image" alt="">
+
+                <div class=highlights_image>
+                    <img src="https://via.placeholder.com/260x400?text=Placeholder+Image" alt="">
+                    <div class="bottom-right">100€</div>
                 </div>
-                <div class=highlights_image_3>
-                    <img src="https://via.placeholder.com/200x300?text=Placeholder+Image" alt="">
+
+                <div class=highlights_image>
+                    <img src="https://via.placeholder.com/260x400?text=Placeholder+Image" alt="">
+                    <div class="bottom-right">1005€</div>
                 </div>
-                <div class=highlights_image_4>
-                    <img src="https://via.placeholder.com/200x300?text=Placeholder+Image" alt="">
+
+                <div class=highlights_image>
+                    <img src="https://via.placeholder.com/260x400?text=Placeholder+Image" alt="">
+                    <div class="bottom-right">4500€</div>
                 </div>
-                <div class=highlights_image_5>
-                    <img src="https://via.placeholder.com/200x300?text=Placeholder+Image" alt="">
+
+                <div class=highlights_image>
+                    <img src="https://via.placeholder.com/260x400?text=Placeholder+Image" alt="">
+                    <div class="bottom-right">10€</div>
                 </div>
             </div>
         </div>
