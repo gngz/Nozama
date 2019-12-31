@@ -172,11 +172,13 @@
 
 
 @section('extra-js')
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.1/dist/js/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/dist/js/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lg-thumbnail@1.1.0/dist/lg-thumbnail.min.js"></script>
 <script>
     $(document).ready(function() {
-        lightGallery(document.getElementById('lightgallery'));
+        $('#lightgallery').lightGallery( {
+            thumbnail: true
+        });
     })
      
 </script>
