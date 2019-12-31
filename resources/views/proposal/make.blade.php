@@ -21,13 +21,17 @@
 <br>
 
 <form id="proposalForm" action="" method="post" enctype="multipart/form-data">
+    @csrf
     <div class="row centered">
         <div class="sm col-8 form-field">
             <div id="editor">
-                @if (isset($purchase)) 
-                    {!! $purchase->description !!}
-                @endif
+            
             </div>
+            @error('description')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         
     </div>
@@ -36,13 +40,23 @@
             <label for="">Condição</label><br>
             <input type="radio" name="condition" value="new" checked>Novo<br>
             <input type="radio" name="condition" value="used">Usado<br>
+            @error('condition')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
     </div>
 
     <div class="row centered">
         <div class="sm col-8 form-field">
             <label for="">Preço</label><br>
-            <input type="number" name="" id="" class="input" placeholder="Insira o preço da sua proposta.">
+            <input type="number" name="price" id="" class="input" placeholder="Insira o preço da sua proposta.">
+            @error('price')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
     </div>
 
@@ -77,4 +91,5 @@
         placeholder: 'Insira a descrição da sua proposta'
     });
 </script>
+<script src="{{ asset('js/proposal.js') }}"></script>
 @endsection

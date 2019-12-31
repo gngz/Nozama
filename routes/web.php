@@ -49,6 +49,7 @@ Route::prefix('purchase')->group(function() {
 
 Route::prefix('proposals')->group(function() {
      Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
+     Route::post('/make/{id}', 'ProposalController@addProposal')->middleware('auth'); 
 });
 
 Route::prefix('profile')->group(function() {
