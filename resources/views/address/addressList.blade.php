@@ -19,7 +19,7 @@
             </div>
             <!-- Endereços na BD-->
             @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
-            <?php 
+            <?php
                 $user = Auth::User();
                 if($user->id == $data->user_id){
             ?>
@@ -31,11 +31,11 @@
                         <p>{{ $data->zip}} {{ $data->region }}</p>
                         <p>{{ $data->country }}</p>
                         <p>Telemóvel: {{ $data->phone }}</p>
-                        <a href="{{ route('editAddress').$data->id }}"><button class="btn primary">Editar</button></a>
+                        <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar</button></a>
                         <button class="btn inverted">Definir como Principal</button>
                     </div>
                 </div>
-            <?php }?>    
+            <?php }?>
             @endforeach
 
             {{-- <div class="sm col-3">

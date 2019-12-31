@@ -36,19 +36,19 @@ Route::prefix('account')->middleware('auth')->group(function() {
 
 Route::prefix('purchase')->group(function() {
    // Route::get('/', 'Account\AccountController@index')->name('account');
-    Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase'); 
-    Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases'); 
-    Route::get('/{id}', 'PurchaseController@purchase'); 
+    Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase');
+    Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases');
+    Route::get('/{id}', 'PurchaseController@purchase');
     Route::get('/delete/{id}', 'PurchaseController@delete')->middleware('auth');
     Route::get('/edit/{id}', 'PurchaseController@viewEdit')->middleware('auth');
     Route::post('/edit/{id}', 'PurchaseController@edit')->middleware('auth');
-    Route::post('/create', 'PurchaseController@add')->middleware('auth')->name('createPurchase'); 
-    //Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm'); 
+    Route::post('/create', 'PurchaseController@add')->middleware('auth')->name('createPurchase');
+    //Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm');
 });
 
 
 Route::prefix('proposals')->group(function() {
-     Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
+     Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal');
 });
 
 Route::prefix('profile')->group(function() {
@@ -56,13 +56,13 @@ Route::prefix('profile')->group(function() {
     Route::get('/contact/{id}', 'ProfileController@contact');
     Route::post('/contact/{id}', 'ProfileController@sendMail');
 });
- 
+
 
 
 Route::prefix('util')->group(function() {
     Route::get('/categories', 'UtilController@getCategories');
     Route::get('/subcategories/{id}', 'UtilController@getSubcategories');
-    
+
 });
 
 function addressPrefix() {
@@ -74,7 +74,7 @@ function addressPrefix() {
         Route::post('/add', 'Address\AddressController@addAdress')->name('addNewAddress');
 
         //editar um endereço existente
-        Route::get('/edit/{}','Address\AddressController@edit')->name('editAddress');
+        Route::get('/edit/{id}','Address\AddressController@edit')->name('editAddress');
         Route::post('/edit', 'Address\AddressController@editAddress')->name('editAddressForm');
     });
 }

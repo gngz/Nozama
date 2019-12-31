@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('editAddressForm') }}">
         @csrf
         <!-- Nome Completo -->
         <div class="row centered">
