@@ -35,7 +35,7 @@
     <div class="row centered">
         <div class="sm col-8">
             @foreach ($images->get() as $image)
-            <img src="/storage/{{ $image->path }}">
+            <img class="purchase-img" src="/storage/{{ $image->path }}">
             @endforeach
         </div>
     </div>
