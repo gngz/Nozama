@@ -11,6 +11,7 @@ class Purchase extends Model
         return $this->hasOne('App\User',"id","user_id");
     }
 
+
     function category() {
 
        // dd($this->hasOne('App\Category',"id","category_id"));

@@ -105,6 +105,18 @@
             <h2 class="title">Propostas</h2>
         </div>
     </div>
+
+    <div class="row centered">
+        <div class="sm col-8">
+            @foreach ($proposals as $proposal)
+                <p>{{ $proposal->user->name }}</p>
+            @endforeach
+            
+        </div>
+    </div>
+
+
+    
     @endif
 
    

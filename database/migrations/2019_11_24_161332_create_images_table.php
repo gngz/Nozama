@@ -19,7 +19,9 @@ class CreateImagesTable extends Migration
 
             $table->bigInteger('purchase_id')->unsigned()->nullable();
             $table->foreign('purchase_id')->references('id')->on('purchases')->onDelete('cascade');
-            //$table->timestamps();
+            $table->bigInteger('proposal_id')->unsigned()->nullable();
+            $table->foreign('proposal_id')->references('id')->on('proposals')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

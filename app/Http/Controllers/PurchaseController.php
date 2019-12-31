@@ -30,11 +30,13 @@ class PurchaseController extends Controller
 
         $purchase = Purchase::find($request->id);
 
+        $proposals = $purchase->proposals;
+
 
         
         if($purchase) {
             $images = $purchase->images();
-            return view("purchase.view",["user" => $user,"purchase" =>  $purchase, "images" => $images]);
+            return view("purchase.view",["user" => $user,"purchase" =>  $purchase, "images" => $images, "proposals" => $proposals]);
         } else {
             return redirect("/purchase");
         }
