@@ -1,5 +1,7 @@
 @extends('layouts.home')
-
+@section('extra-css')
+    <link href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css" rel="stylesheet">
+@endsection
 @section('content')
 
 @auth
@@ -34,9 +36,12 @@
 
     <div class="row centered">
         <div class="sm col-8">
-            @foreach ($images->get() as $image)
-            <img class="purchase-img" src="/storage/{{ $image->path }}">
-            @endforeach
+            <div id="lightgallery">
+                @foreach ($images->get() as $image)
+                    <a href="/storage/{{ $image->path }}"><img class="purchase-img" src="/storage/{{ $image->path }}"></a>
+                @endforeach
+            </div>
+            
         </div>
     </div>
 @endif
@@ -129,4 +134,16 @@
 
 
 
+@endsection
+
+
+@section('extra-js')
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.1/dist/js/lightgallery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        lightGallery(document.getElementById('lightgallery'));
+    })
+     
+</script>
 @endsection
