@@ -71,6 +71,10 @@ Route::prefix('util')->group(function() {
     
 });
 
+Route::prefix('payment')->group(function() {
+    Route::get('/{id}', 'PaymentController@payment');
+});
+
 function addressPrefix() {
     Route::prefix('address')->group(function() {
         Route::get('/', 'Address\AddressController@index')->name('addressList');
