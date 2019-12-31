@@ -24,6 +24,8 @@ class PaymentController extends Controller
 
      
 
+        dd($imgs);
+
         if($proposal) {
             
             $stripe_session = \Stripe\Checkout\Session::create([
