@@ -32,7 +32,7 @@
                         <p>{{ $data->country }}</p>
                         <p>Telemóvel: {{ $data->phone }}</p>
                         <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar</button></a>
-                        <button class="btn inverted">Definir como Principal</button>
+                        <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a>
                     </div>
                 </div>
             <?php }?>

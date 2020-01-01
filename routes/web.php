@@ -76,6 +76,10 @@ function addressPrefix() {
         //editar um endereço existente
         Route::get('/edit/{id}','Address\AddressController@edit')->name('editAddress');
         Route::post('/edit', 'Address\AddressController@editAddress')->name('editAddressForm');
+
+        //tornar endereço principal
+        Route::post('/', 'Address\AddressController@isMain')->name('mainAddress');
+        
     });
 }
 

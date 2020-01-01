@@ -26,12 +26,12 @@ class AddressController extends Controller
      *
      * @return void
      */
-    public function index(){
+    public function index(Request $request){
         $address = DB::table('addresses')->get();
         return view('address.addressList',['address' => $address]);
     }
 
-    public function add(){
+    public function add(Request $request){
         return view('address.add');
     }
 
@@ -76,49 +76,32 @@ class AddressController extends Controller
     }
 
     public function editAddress(Request $request){
-        $validatedData = $request->validate([
-            'name' => 'nullable|max:255',
-            'address' => 'nullable|max:255',
-            'address_extra' => 'nullable|sometimes|min:8|confirmed',
-            'city' => 'nullable|sometimes|min:8',
-            'zip' => 'nullable|sometimes|min:8',
-            'region' => 'nullable|sometimes|min:8',
-            'country' => 'nullable|sometimes|min:8',
-            'phone' => 'nullable|sometimes|min:9'
-        ]);
+        $user = Auth::User();
 
-        $address = DB::table('addresses')->find($request->id);
+        $address = Address::find();
 
+        dd($address);
 
-        if(isset($validatedData['name'])) {
-            $address->name = $validatedData['name'];
+        if($user->id != $request->id){
+            return redirect ("/account/address");
         }
 
-        if(isset($validatedData['address'])) {
-            $address->address = $validatedData['address'];
-        }
-
-        if(isset($validatedData['address_extra'])) {
-            $address->address_extra = $validatedData['data_extra'];
-        }
-        if(isset($validatedData['city'])) {
-            $address->city = $validatedData['city'];
-        }
-        if(isset($validatedData['zip'])) {
-            $address->zip = $validatedData['zip'];
-        }
-        if(isset($validatedData['region'])) {
-            $address->region = $validatedData['region'];
-        }
-        if(isset($validatedData['country'])) {
-            $address->country = $validatedData['country'];
-        }
-
-        if(isset($validatedData['phone'])) {
-            $address->phone = $validatedData['phone'];
-        }
+        $address->name = $request->name;
+        $address->address = $request->address;
+        $address->address_extra = $request->address_extra;
+        $address->phone = $request->phone;
+        $address->city = $request->city;
+        $address->region = $request->region;
+        $address->country = $request->country;
+        $address->zip = $request->zip;
 
         $address->save();
-        dd($address);
+
+        return redirect ("/account/address");
     }
+
+    public function isMain(Request $request){
+        dd($request);
+    }
+
 }

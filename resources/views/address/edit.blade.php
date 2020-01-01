@@ -15,7 +15,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="name">Nome</label>
-            <input id="name" type="text" class="input @error('name') is-invalid @enderror" name="name" autocomplete="name" autofocus  placeholder="{{ $data->name }}">
+            <input id="name" type="text" class="input @error('name') is-invalid @enderror" name="name" autocomplete="name" autofocus  value="{{ $data->name }}">
                 @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -27,7 +27,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="address">Endereço</label>
-                <input id="address" type="text" class="input @error('address') is-invalid @enderror" name="address" autocomplete="address" autofocus  placeholder="{{ $data->address }}">
+                <input id="address" type="text" class="input @error('address') is-invalid @enderror" name="address" autocomplete="address" autofocus  value="{{ $data->address }}">
                 @error('address')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="address_extra">Endereço (extra)</label>
-                <input id="address_extra" type="text" class="input @error('address_extra') is-invalid @enderror" name="address_extra" autocomplete="address_extra" autofocus  placeholder="{{ $data->address_extra }}">
+                <input id="address_extra" type="text" class="input @error('address_extra') is-invalid @enderror" name="address_extra" autocomplete="address_extra" autofocus  value="{{ $data->address_extra }}">
                 @error('address_extra')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="city">Cidade</label>
-                <input id="city" type="text" class="input @error('city') is-invalid @enderror" name="city" autocomplete="city" autofocus  placeholder="{{ $data->city }}">
+                <input id="city" type="text" class="input @error('city') is-invalid @enderror" name="city" autocomplete="city" autofocus  value="{{ $data->city }}">
                 @error('city')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -63,7 +63,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="zip">Código Postal</label>
-                <input id="zip" type="text" class="input @error('zip') is-invalid @enderror" name="zip" autocomplete="zip" autofocus  placeholder="{{ $data->zip }}">
+                <input id="zip" type="text" class="input @error('zip') is-invalid @enderror" name="zip" autocomplete="zip" autofocus  value="{{ $data->zip }}">
                 @error('zip')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -75,7 +75,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="region">Região</label>
-                <input id="region" type="text" class="input @error('zip') is-invalid @enderror" name="region" autocomplete="region" autofocus  placeholder="{{ $data->region }}">
+                <input id="region" type="text" class="input @error('zip') is-invalid @enderror" name="region" autocomplete="region" autofocus value="{{ $data->region }}">
                 @error('region')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="country">País</label>
-                <input id="country" type="text" class="input @error('country') is-invalid @enderror" name="country" rautocomplete="country" autofocus  placeholder="{{ $data->country }}">
+                <input id="country" type="text" class="input @error('country') is-invalid @enderror" name="country" rautocomplete="country" autofocus value="{{ $data->country }}">
                 @error('country')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -99,7 +99,7 @@
         <div class="row centered">
             <div class="sm w500 form-field">
                 <label class="label" for="phone">Número de contacto</label>
-                <input id="phone" type="text" class="input @error('phone') is-invalid @enderror" name="phone" autocomplete="phone" autofocus  placeholder="{{ $data->phone }}">
+                <input id="phone" type="text" class="input @error('phone') is-invalid @enderror" name="phone" autocomplete="phone" autofocus value="{{ $data->phone }}">
                 @error('phone')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -120,7 +120,7 @@
     <div class="row centered">
         <div class="sm w500 form-field">
             <hr class="line">
-        <button type="submit" class="btn inverted btn-md w100">Voltar a Lista de Endereços</button>
+        <a href="/account/address"><button type="submit" class="btn inverted btn-md w100">Voltar a Lista de Endereços</button></a>
         </div>
     </div>
 
