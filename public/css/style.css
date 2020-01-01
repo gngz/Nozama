@@ -41,7 +41,7 @@
 
 .highlights_title{
   text-align: center;
-  font-size: 18px;
+  font-size: 1.5em;
 }
 
 .highlights_images_container{
@@ -51,6 +51,7 @@
   position: relative;
   text-align: center;
   color: white;
+  margin-bottom: 50px;
 }
 
 .highlights_image{
