@@ -57,7 +57,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <p>Ainda não possui nenhuma compra! Que tal fazer uma?</p>
+        <p>Ainda não possui nenhuma proposta! Que tal fazer uma?</p>
     </div>
 </div>
 
