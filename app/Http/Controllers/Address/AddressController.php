@@ -78,7 +78,7 @@ class AddressController extends Controller
     public function editAddress(Request $request){
         $user = Auth::User();
 
-        $address = Address::find();
+        $address = Address::find($request->id);
 
         dd($address);
 
