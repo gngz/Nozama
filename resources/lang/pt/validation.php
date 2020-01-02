@@ -151,6 +151,9 @@ return [
         'subcategory' => 'subcategoria',
         'subject' => 'assunto',
         'subject' => 'mensagem',
+        'price' => 'preço',
+        'condition' => 'condição',
+        'description' => 'descrição',
     ],
 
 ];

@@ -52,7 +52,18 @@
             <input id="password-confirm" type="password" class="input" name="password_confirmation" required autocomplete="new-password" placeholder="Volte a introduzir a password.">
         </div>
     </div>
-
+    <br>
+    <div class="row centered">
+        <div class="sm w500 form-field">
+           <input type="checkbox" class="" name="terms" id=""> Aceito os <a href="{{url('/terms')}}">termos e condições</a> e a <a href="{{url('/privacy')}}">política de privacidade</a> da Nozama.
+            @error('terms')
+            <span class="invalid-feedback" role="alert">
+                <strong>É obrigatório aceitar os termos e condições e política de privacidade.</strong>
+            </span>
+            @enderror
+        </div>
+    </div>
+    <br>
     <div class="row centered">
         <div class="sm w500 form-field">
             <button type="submit" class="btn primary btn-md w100">Registar</button>

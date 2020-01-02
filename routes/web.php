@@ -13,12 +13,11 @@
 
 use App\Address;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@main');
 
 Route::view('/about', 'about');
 Route::view('/terms', 'terms');
+Route::view('/privacy', 'privacy');
 
 
 Auth::routes();
@@ -36,9 +35,9 @@ Route::prefix('account')->middleware('auth')->group(function() {
 
 Route::prefix('purchase')->group(function() {
    // Route::get('/', 'Account\AccountController@index')->name('account');
-    Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase');
-    Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases');
-    Route::get('/{id}', 'PurchaseController@purchase');
+    Route::view('/create', 'purchase.create')->middleware('auth')->name('createPurchase'); 
+    Route::get('/', 'PurchaseController@main')->middleware('auth')->name('viewPurchases'); 
+    Route::get('/{id}', 'PurchaseController@purchase')->name('viewPurchase');; 
     Route::get('/delete/{id}', 'PurchaseController@delete')->middleware('auth');
     Route::get('/edit/{id}', 'PurchaseController@viewEdit')->middleware('auth');
     Route::post('/edit/{id}', 'PurchaseController@edit')->middleware('auth');
@@ -48,21 +47,54 @@ Route::prefix('purchase')->group(function() {
 
 
 Route::prefix('proposals')->group(function() {
-     Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal');
+     Route::get('/', 'ProposalController@main')->middleware('auth')->name('viewProposals');
+     Route::get('/{id}', 'ProposalController@view')->middleware('auth')->name('viewProposal'); 
+     Route::get('/make/{id}', 'ProposalController@make')->middleware('auth')->name('makeProposal'); 
+     Route::post('/make/{id}', 'ProposalController@addProposal')->middleware('auth');
+     Route::get('/delete/{id}', 'ProposalController@delete')->middleware('auth')->name('deleteProposal');
+
 });
 
 Route::prefix('profile')->group(function() {
-    Route::get('/{id}', 'ProfileController@display');
+    Route::get('/{id}', 'ProfileController@display')->name('viewProfile');
     Route::get('/contact/{id}', 'ProfileController@contact');
     Route::post('/contact/{id}', 'ProfileController@sendMail');
+    
 });
 
+
+
+Route::prefix('category')->group(function() {
+    Route::get('/{id}', 'CategoryController@view')->name('viewCategory');
+    
+});
 
 
 Route::prefix('util')->group(function() {
     Route::get('/categories', 'UtilController@getCategories');
     Route::get('/subcategories/{id}', 'UtilController@getSubcategories');
 
+});
+
+Route::prefix('payment')->group(function() {
+    Route::get('/{id}', 'PaymentController@payment');
+    Route::get('/success/{id}', 'PaymentController@success');
+});
+
+Route::prefix('credit')->middleware('auth')->group(function() {
+    Route::view('/add','credit.addcredit')->name('addCredit');
+    Route::post('/confirm','CreditController@confirm')->name('creditConfirm');
+    Route::get('/success/{id}', 'CreditController@success');
+    Route::view('/cancel','credit.cancel');
+    Route::get('/', 'CreditController@view')->name('creditView');
+
+});
+
+
+
+Route::prefix('search')->group(function() {
+    Route::get('/', 'SearchController@search');
+    
 });
 
 function addressPrefix() {
