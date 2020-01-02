@@ -107,16 +107,14 @@
                 @enderror
             </div>
         </div>
-
         <!-- Botão de submit do formuláro de resgisto de um endereço -->
         <div class="row centered">
             <div class="sm w500 form-field">
                 <button type="submit" class="btn primary btn-md w100">Modificar Endereço</button>
             </div>
         </div>
-
     </form>
-
+    <!-- Botão para voltar a página anterior -->
     <div class="row centered">
         <div class="sm w500 form-field">
             <hr class="line">
@@ -124,4 +122,4 @@
         </div>
     </div>
 
-    @endsection
+@endsection

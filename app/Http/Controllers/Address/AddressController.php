@@ -28,7 +28,8 @@ class AddressController extends Controller
      */
     public function index(Request $request){
         $address = DB::table('addresses')->get();
-        return view('address.addressList',['address' => $address]);
+        $user = Auth::User();
+        return view('address.addressList',['address' => $address, 'user'=> $user]);
     }
 
     public function add(Request $request){
