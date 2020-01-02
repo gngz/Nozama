@@ -2,6 +2,24 @@
 
 @section('content')
 
+@auth
+    @if ($user->role == "admin" )
+    <div class="row centered">
+        <div class="sm col-8">
+            <h2 class="title">Administrador</h2>
+        </div>
+    </div>
+
+    <div class="row centered">
+        <div class="sm col-8">
+            <a href="#" class="btn primary">Eliminar Utilizador</a>
+        </div>
+    </div>
+
+    @endif 
+@endauth
+
+
 <div class="row centered">
     <div class="sm col-8">
         <h1 class="title">Utilizador</h1>
