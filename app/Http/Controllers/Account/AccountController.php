@@ -28,7 +28,11 @@ class AccountController extends Controller
     {
         $user = Auth::user();
 
-        return view('account.main',["user" => $user]);
+        $balance = \Stripe\Balance::retrieve(
+            ['stripe_account' => $user->stripe_id]
+        );
+
+        return view('account.main',["user" => $user, "balance" => $balance]);
     }
 
     public function edit() {

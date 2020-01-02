@@ -12,6 +12,8 @@
     <div class="sm col-8">
         <h2 class="title">{{$user->name}}</h2>
         <h3 class="subtitle">{{$user->email}}</h3>
+        <h4 class="subtitle">Saldo: {{ $user->balance }}€</h4>
+        
     </div>
 </div>
 

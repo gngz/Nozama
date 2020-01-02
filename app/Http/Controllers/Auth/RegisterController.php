@@ -63,10 +63,45 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $name = explode(' ',$data['name']);
+
+        $firstname = $name[0];
+        $lastname = null;
+
+        if(count($name) > 1) {
+            $lastname = end($name);
+        }
+
+
+        $account = \Stripe\Account::create([
+            'country' => 'PT',
+            'type' => 'custom',
+            'email' => $data['email'],
+            'country' => 'PT',
+            'default_currency' => 'eur',
+            'business_type' => 'individual',
+            'individual' => [
+                'first_name' => $firstname,
+                'last_name' => $lastname,
+                'email' => $data['email'],
+
+            ],
+            'requested_capabilities' => ['card_payments', 'transfers'],
+        ]);
+
+
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'stripe_id' => $account->id,
             'password' => Hash::make($data['password']),
+            
         ]);
+
+        
+
     }
 }

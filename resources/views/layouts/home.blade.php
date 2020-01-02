@@ -53,9 +53,9 @@
                 <ul>
                     <li><a href="{{url("/about")}}">Sobre Nós</a></li>
                     <li>|</li>
-                    <li>Termos de Utilização</li>
+                    <li><a href="{{url("/terms")}}">Termos e Condições</a></li>
                     <li>|</li>
-                    <li>Política de Privacidade</li>
+                    <li><a href="{{url("/privacy")}}">Política de Privacidade</a></li>
                 </ul>
             </div>
             <div class="copyright">

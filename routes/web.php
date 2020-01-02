@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::view('/about', 'about');
 Route::view('/terms', 'terms');
+Route::view('/privacy', 'privacy');
 
 
 Auth::routes();
@@ -73,6 +74,12 @@ Route::prefix('util')->group(function() {
 
 Route::prefix('payment')->group(function() {
     Route::get('/{id}', 'PaymentController@payment');
+    Route::get('/success/{id}', 'PaymentController@success');
+});
+
+Route::prefix('search')->group(function() {
+    Route::get('/', 'SearchController@search');
+    
 });
 
 function addressPrefix() {
