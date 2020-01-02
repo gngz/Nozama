@@ -23,6 +23,8 @@ class ProposalController extends Controller
                 return view('proposal.view',['purchase' => $purchase,'proposal' => $proposal , 'images' => $images, 'user' => $user]);
             }
             
+        } else {
+            return redirect('/');
         }
        
 
