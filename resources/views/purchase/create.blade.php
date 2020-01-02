@@ -50,6 +50,11 @@
                     {!! $purchase->description !!}
                 @endif
             </div>
+            @error('description')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
     </div>
     
 </div>

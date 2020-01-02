@@ -62,9 +62,12 @@ class ProposalController extends Controller
 
     function make(Request $request) {
 
+        $user = Auth::User();
+
         $purchase = Purchase::find($request->id);
 
-        //dd($purchase);
+        if($user == $purchase->user)
+            return redirect('/');
 
         return view('proposal.make',['purchase' => $purchase]);
     }

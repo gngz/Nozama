@@ -6,7 +6,6 @@
     <div class="sm col-8">
         <h1 class="title">Utilizador</h1>
         <h1 class="subtitle">{{$user->name}}</h2>
-        <h3 class="subtitle">Rating: n/a</h3>
     </div>
 </div>
 
