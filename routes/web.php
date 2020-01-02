@@ -58,7 +58,7 @@ Route::prefix('proposals')->group(function() {
 });
 
 Route::prefix('profile')->group(function() {
-    Route::get('/{id}', 'ProfileController@display');
+    Route::get('/{id}', 'ProfileController@display')->name('viewProfile');
     Route::get('/contact/{id}', 'ProfileController@contact');
     Route::post('/contact/{id}', 'ProfileController@sendMail');
     

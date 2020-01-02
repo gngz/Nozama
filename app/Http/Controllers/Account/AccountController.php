@@ -69,6 +69,7 @@ class AccountController extends Controller
         }
 
         $user->save();
-        dd($validatedData);
+        
+        return view('msg',['message' => "Conta modificada com sucesso!"]);
     }
 }

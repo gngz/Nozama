@@ -33,8 +33,10 @@
             <div class="list grey">
                 <div class="row">
                     <div class="sm col body">
-        
-                        <strong class="text-focus">{{ $purchase->title }}</strong>
+                        <span>
+                            <strong class="text-focus"> <a href="{{ route('viewPurchase', $purchase->id)}}">{{ $purchase->title }}</a></strong>
+                            <span> Comprador: <a href="{{ route('viewProfile', $purchase->id)}}">{{ $purchase->user->name }}</a></span>
+                        </span>
                     </div>
                
                 </div>
