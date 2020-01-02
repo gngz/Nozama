@@ -50,5 +50,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Proposal',"user_id","id");
     }
 
+    public function credits() {
+        return $this->hasMany('App\Credit',"user_id","id");
+    }
+
 
 }

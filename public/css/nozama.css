@@ -161,3 +161,8 @@ footer .copyright {
   width: 1em;
 }
 
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+

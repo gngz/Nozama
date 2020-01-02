@@ -77,6 +77,17 @@ Route::prefix('payment')->group(function() {
     Route::get('/success/{id}', 'PaymentController@success');
 });
 
+Route::prefix('credit')->middleware('auth')->group(function() {
+    Route::view('/add','credit.addcredit')->name('addCredit');
+    Route::post('/confirm','CreditController@confirm')->name('creditConfirm');
+    Route::get('/success/{id}', 'CreditController@success');
+    Route::view('/cancel','credit.cancel');
+    Route::get('/', 'CreditController@view')->name('creditView');
+
+});
+
+
+
 Route::prefix('search')->group(function() {
     Route::get('/', 'SearchController@search');
     
