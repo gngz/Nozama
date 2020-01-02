@@ -2,8 +2,12 @@
 
 @section('content')
     <div class="hero img">
-        <h1 class="title">Uma nova maneira de vender e comprar!</h1>
-        <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h1 class="title">Uma nova maneira de comprar e vender!</h1>
+        <h2 class="subtitle">De Z a A, anuncie a sua próxima compra!</h2>
+        <p>Ao contrário das outras plataformas, o Nozama não lhe pergunta o que quer vender, pergunta o que quer comprar.</p>
+        <br>
+        <br>       
+        <a href="{{ route('createPurchase') }}" class="btn inverted btn-md">Anunciar</a>
     </div>
 
     <div class="row centered">
