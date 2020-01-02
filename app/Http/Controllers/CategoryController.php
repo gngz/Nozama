@@ -11,6 +11,7 @@ class CategoryController extends Controller
     function view(Request $request) {
 
         $category = Category::find($request->id);
+        
         if($category) {
             $subcategories = $category->subcategories;
             $purchases = $category->purchases()->paginate(10);
