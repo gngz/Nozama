@@ -166,10 +166,12 @@ th, td {
     justify-content:space-evenly;
     margin-left: -20px;
     margin-right: -20px;
+
+    flex-wrap: wrap;
    
 
     .purchase {
-        margin:0 20px;
+        margin:10px 20px;
     }
 
     .p-img {

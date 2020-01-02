@@ -8,7 +8,7 @@
 
         <meta property="og:title" content="Nozama">
         <meta property="og:description" content="Marketplace fictício orientado ao comprador. Projeto da cadeira de Aplicações Centradas em Redes da Universidade da Madeira 2019/2020.">
-        <meta property="og:image" content="{{ asset('img/logo.png') }}">
+        <meta property="og:image" content="{{ asset('images/logo.png') }}">
         <meta name="twitter:card" content="summary_large_image">
 
        
@@ -29,7 +29,7 @@
     </head>
     <body>
         <nav class="navbar">
-            <a class="logo" href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
+            <a class="logo" href="/"><img src="{{ asset('images/logo.png') }}" alt=""></a>
             <ul>
                 @auth
                     <li><a class="btn inverted" href="{{ route('account') }}"><i class="icon fas fa-user"></i> Minha Conta</a></li>
