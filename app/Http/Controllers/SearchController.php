@@ -15,8 +15,7 @@ class SearchController extends Controller
             return redirect('/');
         }
 
-        $result = DB::table('purchases')
-            ->where('title', 'like', '%'.$query.'%')
+        $result = Purchase::where('title', 'like', '%'.$query.'%')
             ->paginate(10);
 
         return view("search.search", ['purchases' => $result, 'query' => $query]);

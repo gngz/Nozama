@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="row right">
+    <div class="row centered">
         <div class="sm w500 form-field">
             <button type="submit" class="btn primary btn-md w100">Modificar</button>
         </div>
