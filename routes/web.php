@@ -63,6 +63,11 @@ Route::prefix('profile')->group(function() {
 });
 
 
+Route::prefix('subcategory')->group(function() {
+    Route::get('/{id}', 'CategoryController@subcategory')->name('viewSubcategory');
+    
+});
+
 
 Route::prefix('category')->group(function() {
     Route::get('/{id}', 'CategoryController@view')->name('viewCategory');
