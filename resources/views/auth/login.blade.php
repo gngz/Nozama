@@ -13,20 +13,21 @@
         <div class="sm w500 form-field">
             <label class="label" for="email">E-mail</label>
             <input id="email" type="email" class="input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="e.g: nome@exemplo.com.">
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    {{ $message }}
-                </span>
-            @enderror
+       
         </div>
     </div>
     <div class="row centered">
         <div class="sm w500 form-field">
             <label class="label" for="password" >Password</label>
             <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required placeholder="Introduza a sua password." >
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+               <strong>{{ $message }}</strong> 
+            </span>
+            @enderror
             @error('password')
                 <span class="invalid-feedback" role="alert">
-                    {{ $message }}
+                    <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
