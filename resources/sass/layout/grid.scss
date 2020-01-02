@@ -10,6 +10,11 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
     justify-content: center;
 }
 
+.vcenter {
+    align-items: center;
+    display: flex;
+}
+
 .row.right {
     justify-content: flex-end;
 }
@@ -33,7 +38,7 @@ $sm_break: 576px; // Breakpoint para tornar a div 100% em sm (Small / Smartphone
 .gap{
     margin-left: -20px;
     margin-right: -20px;
-    width: calc(100% + 40px);
+    width: calc(100% + 40px) ;
     div {
         padding:20px 20px;
     }

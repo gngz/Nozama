@@ -166,3 +166,82 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+.purchases {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.purchases .purchase {
+  margin: 0 20px;
+}
+
+.purchases .p-img {
+  position: relative;
+}
+
+.purchases .p-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 2px 10px;
+  background-color: #F18904;
+  color: white;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.purchases .p-desc {
+  text-align: center;
+}
+
+.search {
+  display: -webkit-box;
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.search .search-img {
+  width: 200px;
+}
+
+.search .search-img img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.search .search-body {
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.search .search-body h2 {
+  margin: 0;
+}
+
+.search .p-tag {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  padding: 2px 10px;
+  background-color: #F18904;
+  color: white;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.search .proposal {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+

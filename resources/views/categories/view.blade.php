@@ -4,28 +4,10 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="title">Pesquisa</h1>
+        <h1 class="title">Categoria {{$category->name}}</h1>
     </div>
 </div>
 
-<form action="{{url('/search')}}" method="get">
-    
-    <div class="row centered">
-        <div class="sm col-8">
-            <div class="row gap centered">
-                <div class="sm col-9 vcenter">
-                    <input class="input" type="text" name="query" id="" placeholder="Escreva um termo ao qual pretende pesquisar. eg: carro." value="{{ $query }}">
-                </div>
-                <div class="sm col-1 vcenter">
-                    <input type="submit" value="Pesquisar" class="btn primary btn-md w100">
-                </div>
-            </div>
-    
-        </div>
-    </div>
-        
-</form>
-<br>
 
 
 

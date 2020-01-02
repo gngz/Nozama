@@ -13,9 +13,7 @@
 
 use App\Address;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@main');
 
 Route::view('/about', 'about');
 Route::view('/terms', 'terms');
@@ -64,6 +62,12 @@ Route::prefix('profile')->group(function() {
     
 });
  
+
+
+Route::prefix('category')->group(function() {
+    Route::get('/{id}', 'CategoryController@view')->name('viewCategory');
+    
+});
 
 
 Route::prefix('util')->group(function() {

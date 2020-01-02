@@ -159,3 +159,82 @@ footer {
 th, td {
     border-bottom: 1px solid #ddd;
 }
+
+
+.purchases {
+    display: flex;
+    justify-content:space-evenly;
+    margin-left: -20px;
+    margin-right: -20px;
+   
+
+    .purchase {
+        margin:0 20px;
+    }
+
+    .p-img {
+        position: relative;
+    }
+    .p-tag {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 2px 10px;
+        background-color:  $primary-color;
+        color: white;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+    .p-desc {
+        text-align: center;
+    }
+}
+
+.search {
+    display: flex;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    .search-img {
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        width: 200px;
+
+    }
+
+    .search-body {
+
+        h2 {
+            margin: 0;
+        }
+        padding: 10px 20px;
+        position: relative;
+        width: 100%
+    }
+
+    .p-tag {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        padding: 2px 10px;
+        background-color:  $primary-color;
+        color: white;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+    .proposal {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
