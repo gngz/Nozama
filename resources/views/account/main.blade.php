@@ -21,7 +21,7 @@
 <div class="row centered">
     <div class="sm col-8">
         <a href="{{ route('editAccount') }}" class="btn inverted">Editar Conta</a> 
-        <a href="{{ route('editAccount') }}" class="btn primary">Adicionar Saldo</a>
+        <a href="{{ route('addCredit') }}" class="btn primary">Adicionar Saldo</a>
     </div>
 </div>
 <br>
@@ -39,7 +39,7 @@
             <input class="input" type="text" name="query" id="" placeholder="Escreva um termo ao qual pretende pesquisar. eg: carro.">
         </div>
         <div class="sm col-1">
-            <input type="submit" value="Pesquisar" class="btn primary">
+            <input type="submit" value="Pesquisar" class="btn primary btn-md w100" style="margin-left: 10px">
         </div>
     </div>
 </form>
@@ -63,6 +63,9 @@
             </div>
             <div class="sm col">
                 <a href="{{ route('addressList') }}"><button class="btn flat-primary btn-option">Moradas</button></a>
+            </div>
+            <div class="sm col">
+                <a href="{{ route('creditView') }}"><button class="btn flat-primary btn-option">Créditos</button></a>
             </div>
         </div>
     </div>
