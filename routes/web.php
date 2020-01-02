@@ -41,8 +41,8 @@ Route::prefix('purchase')->group(function() {
     Route::get('/delete/{id}', 'PurchaseController@delete')->middleware('auth');
     Route::get('/edit/{id}', 'PurchaseController@viewEdit')->middleware('auth');
     Route::post('/edit/{id}', 'PurchaseController@edit')->middleware('auth');
-    Route::post('/create', 'PurchaseController@add')->middleware('auth')->name('createPurchase'); 
-    //Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm'); 
+    Route::post('/create', 'PurchaseController@add')->middleware('auth')->name('createPurchase');
+    //Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm');
 });
 
 
@@ -61,7 +61,7 @@ Route::prefix('profile')->group(function() {
     Route::post('/contact/{id}', 'ProfileController@sendMail');
     
 });
- 
+
 
 
 Route::prefix('category')->group(function() {
@@ -73,7 +73,7 @@ Route::prefix('category')->group(function() {
 Route::prefix('util')->group(function() {
     Route::get('/categories', 'UtilController@getCategories');
     Route::get('/subcategories/{id}', 'UtilController@getSubcategories');
-    
+
 });
 
 Route::prefix('payment')->group(function() {
@@ -106,8 +106,12 @@ function addressPrefix() {
         Route::post('/add', 'Address\AddressController@addAdress')->name('addNewAddress');
 
         //editar um endereço existente
-        Route::get('/edit/{}','Address\AddressController@edit')->name('editAddress');
+        Route::get('/edit/{id}','Address\AddressController@edit')->name('editAddress');
         Route::post('/edit', 'Address\AddressController@editAddress')->name('editAddressForm');
+
+        //tornar endereço principal
+        Route::post('/', 'Address\AddressController@isMain')->name('mainAddress');
+        
     });
 }
 
