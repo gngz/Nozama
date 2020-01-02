@@ -12,11 +12,14 @@ class SearchController extends Controller
         $query = $request->query('query');
 
         if(!$query) {
-            return redirect('/');
+            $result = Purchase::paginate(10);
+        } else {
+            $result = Purchase::where('title', 'like', '%'.$query.'%')
+            ->paginate(10);
+
         }
 
-        $result = Purchase::where('title', 'like', '%'.$query.'%')
-            ->paginate(10);
+     
 
         return view("search.search", ['purchases' => $result, 'query' => $query]);
     }

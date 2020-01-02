@@ -34,14 +34,21 @@
 </div>
 
 <form action="{{url('/search')}}" method="get">
-    <div class="row centered">
-        <div class="sm col-7">
-            <input class="input" type="text" name="query" id="" placeholder="Escreva um termo ao qual pretende pesquisar. eg: carro.">
+
+<div class="row centered">
+    <div class="sm col-8">
+        <div class="row gap centered">
+            <div class="sm col-9 vcenter">
+                <input class="input" type="text" name="query" id="" placeholder="Escreva um termo ao qual pretende pesquisar. eg: carro.">
+            </div>
+            <div class="sm col-1 vcenter">
+                <input type="submit" value="Pesquisar" class="btn primary btn-md w100">
+            </div>
         </div>
-        <div class="sm col-1">
-            <input type="submit" value="Pesquisar" class="btn primary btn-md w100" style="margin-left: 10px">
-        </div>
+
     </div>
+</div>
+    
 </form>
     
 <div class="row centered">

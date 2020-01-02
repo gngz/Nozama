@@ -89,7 +89,7 @@
 .btn-md {
   font-size: 16px;
   line-height: 16px;
-  height: 32px;
+  height: 36px;
 }
 
 .navbar {
@@ -238,6 +238,13 @@
 .row.centered {
   -webkit-box-pack: center;
           justify-content: center;
+}
+
+.vcenter {
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
 }
 
 .row.right {
