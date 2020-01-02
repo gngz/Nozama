@@ -10,6 +10,29 @@ use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
+
+    function delete(Request $request) {
+        $user = Auth::User();
+
+        $userDelete = User::find($request->id);
+
+        if($user->role != 'admin') {
+            return redirect('/');
+        }
+
+        if($userDelete) {
+            if($userDelete != $user) {
+                $userDelete->delete();
+                return view('msg', ['message' => "Utilizador removido com sucesso."]);
+            } 
+        }
+
+        return redirect('/');
+
+
+    }
+
+
     function display(Request $request) {
         
         $user = User::find($request->id);
