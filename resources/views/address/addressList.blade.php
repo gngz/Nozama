@@ -17,12 +17,10 @@
                 <a href="{{ route('addAddress') }}"><button class="plus-button"></button></a>
                 </div>
             </div>
+
             <!-- Endereços na BD-->
             @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
-            <?php
-                $user = Auth::User();
-                if($user->id == $data->user_id){
-            ?>
+                @if($user->id == $data->user_id)
                 <div class="sm col-3">
                     <div class="card">
                         <h3>{{ $data->name }}</h3>
@@ -35,7 +33,7 @@
                         <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a>
                     </div>
                 </div>
-            <?php }?>
+                @endif
             @endforeach
 
             {{-- <div class="sm col-3">
