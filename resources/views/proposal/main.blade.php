@@ -58,6 +58,8 @@
 <div class="row centered">
     <div class="sm col-8">
         <p>Ainda não possui nenhuma proposta! Que tal fazer uma?</p>
+        <br>
+        <a href="{{ route('search') }}" class="btn primary">Ver Anúncios de Compras</a>
     </div>
 </div>
 

@@ -119,8 +119,9 @@
 
     <div class="row centered">
         <div class="sm w500 form-field">
-            <hr class="line">
-        <button type="submit" class="btn inverted btn-md w100">Voltar a Lista de Endereços</button>
+        <hr class="line">
+        <a href="{{ route('addressList') }}" class="btn inverted btn-md w100">Voltar a Lista de Endereços</a>
+       
         </div>
     </div>
 

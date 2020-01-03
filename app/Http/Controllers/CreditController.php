@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Credit;
+
+use App\Movement;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +58,7 @@ class CreditController extends Controller
             'mode' => 'payment',
           ]);
 
-          $db_credit = new Credit();
+          $db_credit = new Movement();
 
           $db_credit->stripe_id = $checkout->payment_intent;
           $db_credit->type = 'credit';
@@ -77,13 +78,13 @@ class CreditController extends Controller
     }
 
 
-    function view(Request $request) {
+    function movements(Request $request) {
 
         $user = Auth::User();
 
-        $credits = $user->credits()->paginate(10);
+        $credits = $user->movements()->orderBy('id','DESC')->paginate(10);
 
-        return view('credit.view',['user' => $user, 'credits' => $credits , 'controller' => $this]);
+        return view('account.movements',['user' => $user, 'credits' => $credits , 'controller' => $this]);
     }
 
 
@@ -109,7 +110,7 @@ class CreditController extends Controller
 
             $stripe_id = $payment->id;
             
-            $db_credit = Credit::all()->filter(function($credit) use ($stripe_id) {
+            $db_credit = Movement::all()->filter(function($credit) use ($stripe_id) {
                 return $credit->stripe_id == $stripe_id;
             })->first();
 

@@ -7,7 +7,7 @@
         <p>Ao contrário das outras plataformas, o Nozama não lhe pergunta o que quer vender, pergunta o que quer comprar.</p>
         <br>
         <br>       
-        <a href="{{ route('createPurchase') }}" class="btn inverted btn-md">Anunciar</a>
+        <a href="{{ route('createPurchase') }}" class="btn inverted btn-md">Anúnciar</a>
     </div>
 
     <div class="row centered">

@@ -10,8 +10,8 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="title">Os meus créditos</h1>
-        <h2 class="subtitle">Aqui pode ver a lista dos seus créditos</h2>
+        <h1 class="title">Os meus movimentos</h1>
+        <h2 class="subtitle">Aqui pode ver a lista dos seus movimentos</h2>
     </div>
 </div>
 
@@ -25,7 +25,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h2 class="title">Últimos Pagamentos</h2>
+        <h2 class="title">Últimos Movimentos</h2>
     </div>
 </div>
 
@@ -40,7 +40,7 @@
                     <th>Tipo</th>
                     <th>Valor</th>
                     <th>Data</th>
-                    <th>Proposta</th>
+                    <th>Descritivo</th>
                     <th>Estado</th>
             
                 </tr>
@@ -60,7 +60,7 @@
                     @if ($credit->type == 'credit')
                     <td class="text-center">n/a</td>
                     @else
-                    <td class="text-center">Proposta: </td>
+                    <td class="text-center">{{ $credit->description }} </td>
                     @endif
                     <td class="text-center">{{ $credit->state == 'paid' ? 'Pago' : 'Erro'}}</td>
           

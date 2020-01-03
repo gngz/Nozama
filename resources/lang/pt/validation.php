@@ -85,7 +85,7 @@ return [
     'mimes'                => 'O campo :attribute deve ser um arquivo do tipo: :values.',
     'mimetypes'            => 'O campo :attribute deve ser um arquivo do tipo: :values.',
     'min' => [
-        'numeric' => 'O campo :attribute deve ser pelo menos :min.',
+        'numeric' => 'O campo :attribute deve ter pelo menos :min dígitos.',
         'file'    => 'O campo :attribute deve ter pelo menos :min kilobytes.',
         'string'  => 'O campo :attribute deve ter pelo menos :min caracteres.',
         'array'   => 'O campo :attribute deve ter pelo menos :min itens.',
@@ -104,7 +104,7 @@ return [
     'required_without_all' => 'O campo :attribute é obrigatório quando nenhum dos :values estão presentes.',
     'same'                 => 'Os campos :attribute e :other devem corresponder.',
     'size'                 => [
-        'numeric' => 'O campo :attribute deve ser :size.',
+        'numeric' => 'O campo :attribute deve ser :size .',
         'file'    => 'O campo :attribute deve ser :size kilobytes.',
         'string'  => 'O campo :attribute deve ser :size caracteres.',
         'array'   => 'O campo :attribute deve conter :size itens.',
@@ -154,6 +154,13 @@ return [
         'price' => 'preço',
         'condition' => 'condição',
         'description' => 'descrição',
+        'city' => 'cidade',
+        'name' => 'nome',
+        'address' => 'morada',
+        'zip' => 'código postal',
+        'region' => 'região',
+        'country' => 'país',
+        'phone' => 'telefone',
     ],
 
 ];
