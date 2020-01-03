@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\SubCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -10,8 +11,29 @@ class CategoryController extends Controller
     function view(Request $request) {
 
         $category = Category::find($request->id);
-        $purchases = $category->purchases()->paginate(10);
+        
+        if($category) {
+            $subcategories = $category->subcategories;
+            $purchases = $category->purchases()->paginate(10);
+            return view('categories.view' , ["category" => $category,"purchases" => $purchases, "subcategories" => $subcategories]);
 
-        return view('categories.view' , ["category" => $category,"purchases" => $purchases]);
+        }else {
+            return redirect('/');
+        }
+       
+    }
+
+    function subcategory(Request $request) {
+        $subcategory = SubCategory::find($request->id);
+
+        if($subcategory) {
+            $purchases = $subcategory->purchases()->paginate(10);
+            return view('subcategories.view' , ["subcategory" => $subcategory ,"purchases" => $purchases]);
+
+        } else {
+            return redirect('/');
+        }
+        
+    
     }
 }

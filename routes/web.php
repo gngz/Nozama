@@ -57,11 +57,17 @@ Route::prefix('proposals')->group(function() {
 
 Route::prefix('profile')->group(function() {
     Route::get('/{id}', 'ProfileController@display')->name('viewProfile');
-    Route::get('/contact/{id}', 'ProfileController@contact');
-    Route::post('/contact/{id}', 'ProfileController@sendMail');
-
+    Route::get('/contact/{id}', 'ProfileController@contact')->middleware('auth');;
+    Route::post('/contact/{id}', 'ProfileController@sendMail')->middleware('auth');;
+    Route::get('/delete/{id}', 'ProfileController@delete')->middleware('auth');;
+    
 });
 
+
+Route::prefix('subcategory')->group(function() {
+    Route::get('/{id}', 'CategoryController@subcategory')->name('viewSubcategory');
+    
+});
 
 
 Route::prefix('category')->group(function() {

@@ -7,6 +7,7 @@ use App\Image;
 use App\Purchase;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Storage;
 
 class PurchaseController extends Controller
@@ -90,7 +91,13 @@ class PurchaseController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => ['required','string', 
+                function ($attribute, $value, $fail) {
+                    if ($value === '<p><br></p>') {
+                        $fail(trans('validation.required'));
+                    }
+                } 
+            ],
             'max_price' => 'nullable|numeric',
             'min_price' => 'nullable|numeric',
             'category' => 'nullable|sometimes|numeric',
@@ -162,7 +169,13 @@ class PurchaseController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => ['required','string', 
+                function ($attribute, $value, $fail) {
+                    if ($value === '<p><br></p>') {
+                        $fail(trans('validation.required'));
+                    }
+                } 
+            ],
             'max_price' => 'nullable|numeric',
             'min_price' => 'nullable|numeric',
             'category' => 'required|numeric',
