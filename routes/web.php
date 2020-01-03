@@ -112,6 +112,8 @@ function addressPrefix() {
         //tornar endereço principal
         Route::post('/', 'Address\AddressController@isMain')->name('mainAddress');
 
+        //eliminar endereço
+
     });
 }
 

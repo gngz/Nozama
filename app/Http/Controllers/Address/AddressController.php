@@ -37,6 +37,17 @@ class AddressController extends Controller
     }
 
     public function addAdress(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:30',
+            'address' => 'required|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'required|numeric|min:9',
+            'city' => 'required|sometimes|string|max:40',
+            'region' => 'required|string',
+            'zip' => 'required|string',
+            'country' => 'required|string|max:58',
+        ]);
+
         $address = new Address();
 
         $address->user_id = Auth::User()->id;
@@ -67,6 +78,17 @@ class AddressController extends Controller
     }
 
     public function editAddress(Request $request){
+        $request->validate([
+            'name' => 'nullable|string|max:30',
+            'address' => 'nullable|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'nullable|numeric|min:9',
+            'city' => 'nullable|string|max:40',
+            'region' => 'nullable|string',
+            'zip' => 'nullable|string',
+            'country' => 'nullable|string|max:58',
+        ]);
+
         $user = Auth::User();
 
         $address = Address::find($request->id);
@@ -75,7 +97,7 @@ class AddressController extends Controller
 
         if($address){
 
-            if($user->id != $request->id){
+            if($address->id != $request->id){
                 return redirect ("/account/address");
             }
 
@@ -101,7 +123,29 @@ class AddressController extends Controller
     }
 
     public function isMain(Request $request){
+        $user = Auth::User();
+
+        $address = Address::find($request->id);
+
         dd($request);
+
+        if($address){
+
+            if($user->id != $request->id){
+                return redirect ("/account/address");
+            }
+
+            $address->is_main = true;
+
+            $address->save();
+
+            if($address->id == $request->id){
+                    return redirect ("/account/address");
+            }
+
+        } else {
+            return redirect('/account/address');
+        }
     }
 
 }
