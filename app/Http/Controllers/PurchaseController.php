@@ -98,8 +98,8 @@ class PurchaseController extends Controller
                     }
                 } 
             ],
-            'max_price' => 'nullable|numeric',
-            'min_price' => 'nullable|numeric',
+            'maxPrice' => 'nullable|numeric|between:0.5,999999',
+            'minPrice' => 'nullable|numeric|between:0.5,999999',
             'category' => 'nullable|sometimes|numeric',
             'subcategory' => 'nullable|sometimes|numeric',
     
@@ -176,8 +176,8 @@ class PurchaseController extends Controller
                     }
                 } 
             ],
-            'max_price' => 'nullable|numeric',
-            'min_price' => 'nullable|numeric',
+            'maxPrice' => 'nullable|numeric|between:0,999999',
+            'minPrice' => 'nullable|numeric|between:0,999999',
             'category' => 'required|numeric',
             'subcategory' => 'required|numeric',
     

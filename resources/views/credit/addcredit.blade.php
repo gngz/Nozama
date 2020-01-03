@@ -26,6 +26,11 @@
         <div class="sm col-8 form-field">
             <label class="label" for="value">Valor a carregar (Euros):</label>
             <input type="text" name="value" id="value" class="input" placeholder="Introduza o valor a carregar na sua conta Nozama, e.g.: 200€">
+            @error('value')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
     </div>
 

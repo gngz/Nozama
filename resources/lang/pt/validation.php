@@ -161,6 +161,9 @@ return [
         'region' => 'região',
         'country' => 'país',
         'phone' => 'telefone',
+        'value' => 'valor',
+        'maxPrice' => 'preço máximo',
+        'minPrice' => 'preço minimo',
     ],
 
 ];

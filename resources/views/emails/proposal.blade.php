@@ -26,7 +26,7 @@
 <body>
 
     <div class="header" style="padding-top:20px;padding-bottom:20px;">
-        <img src="https://nozama.ga/img/logo.png" alt="">
+        <img src="{{asset('images/logo.png')}}" alt="">
     </div>
     <div class="body">
         <h3>Recebeu uma proposta de compra {{$user->name }}.</h3>

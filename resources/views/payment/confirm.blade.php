@@ -20,6 +20,20 @@
     </div>
 </div>
 
+
+<div class="row centered">
+    <div class="sm col-8">
+        <div class="search-img">
+            <a href="{{ route('viewPurchase', $purchase->id)}}">
+                @if ($purchase->images->count() > 0)
+                    <img class="search-img" src="/storage/{{ $purchase->images[0]->path }}">
+                @endif
+            </a>
+        </div>
+    </div>
+</div>
+
+
 <div class="row centered">
     <div class="sm col-8">
         <p class="text-focus">Descrição:</p>
