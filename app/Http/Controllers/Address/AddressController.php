@@ -57,22 +57,12 @@ class AddressController extends Controller
         return redirect('/account/address/');
     }
 
-    /* public function edit(){
-        $address = DB::table('addresses')->get();
-        foreach($address as $key => $data){
-            $user = Auth::User();
-            if($user->id == $data->user_id){
-                return view('address.edit',['data' => $data]);
-            }
-        }
-    } */
-
     public function edit(Request $request){
         $address = DB::table('addresses')->get();
 
         foreach($address as $key => $data){
             if($data->id == $request->id)
-            return view('address.edit',['data' => $data]);
+                return view('address.edit',['data' => $data]);
         }
     }
 
@@ -81,24 +71,33 @@ class AddressController extends Controller
 
         $address = Address::find($request->id);
 
-        dd($address);
+        //dd($address);
 
-        if($user->id != $request->id){
-            return redirect ("/account/address");
+        if($address){
+
+            if($user->id != $request->id){
+                return redirect ("/account/address");
+            }
+
+            $address->name = $request->name;
+            $address->address = $request->address;
+            $address->address_extra = $request->address_extra;
+            $address->phone = $request->phone;
+            $address->city = $request->city;
+            $address->region = $request->region;
+            $address->country = $request->country;
+            $address->zip = $request->zip;
+
+            $address->save();
+
+            if($address->id == $request->id){
+                    return redirect ("/account/address");
+            }
+
+        } else {
+            return redirect('/account/address');
         }
 
-        $address->name = $request->name;
-        $address->address = $request->address;
-        $address->address_extra = $request->address_extra;
-        $address->phone = $request->phone;
-        $address->city = $request->city;
-        $address->region = $request->region;
-        $address->country = $request->country;
-        $address->zip = $request->zip;
-
-        $address->save();
-
-        return redirect ("/account/address");
     }
 
     public function isMain(Request $request){
