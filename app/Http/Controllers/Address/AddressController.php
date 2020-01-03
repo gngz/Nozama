@@ -37,6 +37,17 @@ class AddressController extends Controller
     }
 
     public function addAdress(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:30',
+            'address' => 'required|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'required|numeric|min:9',
+            'city' => 'required|sometimes|string|max:40',
+            'region' => 'required|string',
+            'zip' => 'required|string',
+            'country' => 'required|string|max:58',
+        ]);
+
         $address = new Address();
 
         $address->user_id = Auth::User()->id;
@@ -57,52 +68,84 @@ class AddressController extends Controller
         return redirect('/account/address/');
     }
 
-    /* public function edit(){
-        $address = DB::table('addresses')->get();
-        foreach($address as $key => $data){
-            $user = Auth::User();
-            if($user->id == $data->user_id){
-                return view('address.edit',['data' => $data]);
-            }
-        }
-    } */
-
     public function edit(Request $request){
         $address = DB::table('addresses')->get();
 
         foreach($address as $key => $data){
             if($data->id == $request->id)
-            return view('address.edit',['data' => $data]);
+                return view('address.edit',['data' => $data]);
         }
     }
 
     public function editAddress(Request $request){
+        $request->validate([
+            'name' => 'nullable|string|max:30',
+            'address' => 'nullable|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'nullable|numeric|min:9',
+            'city' => 'nullable|string|max:40',
+            'region' => 'nullable|string',
+            'zip' => 'nullable|string',
+            'country' => 'nullable|string|max:58',
+        ]);
+
         $user = Auth::User();
 
         $address = Address::find($request->id);
 
-        dd($address);
+        //dd($address);
 
-        if($user->id != $request->id){
-            return redirect ("/account/address");
+        if($address){
+
+            if($address->id != $request->id){
+                return redirect ("/account/address");
+            }
+
+            $address->name = $request->name;
+            $address->address = $request->address;
+            $address->address_extra = $request->address_extra;
+            $address->phone = $request->phone;
+            $address->city = $request->city;
+            $address->region = $request->region;
+            $address->country = $request->country;
+            $address->zip = $request->zip;
+
+            $address->save();
+
+            if($address->id == $request->id){
+                    return redirect ("/account/address");
+            }
+
+        } else {
+            return redirect('/account/address');
         }
 
-        $address->name = $request->name;
-        $address->address = $request->address;
-        $address->address_extra = $request->address_extra;
-        $address->phone = $request->phone;
-        $address->city = $request->city;
-        $address->region = $request->region;
-        $address->country = $request->country;
-        $address->zip = $request->zip;
-
-        $address->save();
-
-        return redirect ("/account/address");
     }
 
     public function isMain(Request $request){
+        $user = Auth::User();
+
+        $address = Address::find($request->id);
+
         dd($request);
+
+        if($address){
+
+            if($user->id != $request->id){
+                return redirect ("/account/address");
+            }
+
+            $address->is_main = true;
+
+            $address->save();
+
+            if($address->id == $request->id){
+                    return redirect ("/account/address");
+            }
+
+        } else {
+            return redirect('/account/address');
+        }
     }
 
 }

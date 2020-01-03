@@ -29,8 +29,16 @@
                         <p>{{ $data->zip}} {{ $data->region }}</p>
                         <p>{{ $data->country }}</p>
                         <p>Telemóvel: {{ $data->phone }}</p>
-                        <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar</button></a>
-                        <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a>
+                        <div class="row">
+                            <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar/Eliminar</button></a>
+
+                            <form method="POST" action="{{ route('mainAddress', ['data' => $data->id]) }}">
+                                @csrf
+                                <input type="submit" value="Definir como Principal" class="btn inverted">
+                            </form>
+                        </div>
+
+                        {{-- <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a> --}}
                     </div>
                 </div>
                 @endif
