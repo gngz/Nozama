@@ -53,6 +53,8 @@
                 </div>
             </div>
             @endforeach
+            <br>
+            <br>
     
         <div class="row centered">
             {{ $purchases->links() }}
