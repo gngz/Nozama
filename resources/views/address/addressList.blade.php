@@ -20,7 +20,14 @@
     <div class="sm col-8">
         <div class="row space wrap gap">
 
-            <!-- Endereços na BD-->
+            @if ($address->count() == 0)
+             <div>
+                 <br>
+                 <br>
+                 <br>
+                <p class="text-focus">Não adicionou nenhuma morada.</p>
+             </div>
+            @endif
             @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
                 @if($user->id == $data->user_id)
                 <div class="sm col-3">
