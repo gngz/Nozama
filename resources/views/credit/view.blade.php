@@ -37,8 +37,10 @@
         <table class="w100">
             <thead>
                 <tr>
+                    <th>Tipo</th>
                     <th>Valor</th>
                     <th>Data</th>
+                    <th>Proposta</th>
                     <th>Estado</th>
             
                 </tr>
@@ -48,8 +50,18 @@
                 
                 @foreach ($credits as $credit)
                 <tr>
-                    <td class="text-center">{{ $credit->amount }}€</td>
+                    <td class="text-center">{{ $controller::printType($credit->type) }}</td>
+                    @if ($credit->type == 'credit' or $credit->type == 'sell')
+                        <td class="text-center">+{{ $credit->amount }}€</td>
+                    @else
+                        <td class="text-center">-{{ $credit->amount }}€</td>
+                    @endif
                     <td class="text-center">{{ $credit->updated_at }}</td>
+                    @if ($credit->type == 'credit')
+                    <td class="text-center">n/a</td>
+                    @else
+                    <td class="text-center">Proposta: </td>
+                    @endif
                     <td class="text-center">{{ $credit->state == 'paid' ? 'Pago' : 'Erro'}}</td>
           
                     

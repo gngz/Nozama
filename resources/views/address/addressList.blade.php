@@ -10,13 +10,15 @@
 
 <div class="row centered">
     <div class="sm col-8">
+        <a href="{{ route('addAddress') }}" class="btn primary">Adicionar Morada</a>
+    </div>
+</div>
+
+
+
+<div class="row centered">
+    <div class="sm col-8">
         <div class="row space wrap gap">
-            <!-- Adicionar novo endereço -->
-            <div class="sm col-3">
-                <div class="card-plus">
-                <a href="{{ route('addAddress') }}"><button class="plus-button"></button></a>
-                </div>
-            </div>
 
             <!-- Endereços na BD-->
             @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
@@ -24,39 +26,34 @@
                 <div class="sm col-3">
                     <div class="card">
                         <h3>{{ $data->name }}</h3>
-                        <p>{{ $data->address }} {{ $data->address_extra}}</p>
+                        <p>{{ $data->address }}</p>
+                        <p>{{ $data->address_extra}}</p>
                         <p>{{ $data->city }}</p>
                         <p>{{ $data->zip}} {{ $data->region }}</p>
                         <p>{{ $data->country }}</p>
                         <p>Telemóvel: {{ $data->phone }}</p>
-                        <div class="row">
-                            <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar/Eliminar</button></a>
+                        @if ($data->is_main)
+                        <p><strong>Principal</strong></p>
+                        @else
+                            <br>
+                        @endif
+                        
+                        <a href="{{ route('removeAddress', ['data' => $data->id]) }}"><button class="btn primary">Remover</button></a>
+                        <a href="{{ route('editAddress', ['data' => $data->id]) }}"><button class="btn primary">Editar</button></a>
+                        <br><br>
 
-                            <form method="POST" action="{{ route('mainAddress', ['data' => $data->id]) }}">
-                                @csrf
-                                <input type="submit" value="Definir como Principal" class="btn inverted">
-                            </form>
-                        </div>
-
-                        {{-- <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a> --}}
+                        @if (!$data->is_main)
+                            <a href="{{ route('mainAddress', ['data' => $data->id]) }}"><button class="btn inverted">Definir como Principal</button></a>
+                        @else
+                            <br>
+                        @endif
+                        
                     </div>
                 </div>
                 @endif
             @endforeach
 
-            {{-- <div class="sm col-3">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada que Sobe pra baixo, nº55</p>
-                    <p>Funchal</p>
-                    <p>9350-145 Funchal</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 1177656565</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div> --}}
-
+ 
         </div>
     </div>
 </div>

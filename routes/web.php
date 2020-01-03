@@ -115,11 +115,12 @@ function addressPrefix() {
         Route::get('/edit/{id}','Address\AddressController@edit')->name('editAddress');
         Route::post('/edit/{id}', 'Address\AddressController@editAddress')->name('editAddressForm');
 
-        //tornar endereço principal
-        Route::post('/', 'Address\AddressController@isMain')->name('mainAddress');
+        Route::get('/remove/{id}','Address\AddressController@remove')->name('removeAddress');
 
-        //eliminar endereço
-        Route::get('/edit/{id}/delete', 'Address\AddressController@delete')->name('deleteAddress');
+
+        //tornar endereço principal
+        Route::get('/main/{id}', 'Address\AddressController@setMain')->name('mainAddress');
+        
     });
 }
 
