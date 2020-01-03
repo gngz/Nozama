@@ -23,7 +23,12 @@
         <h3 class="subtitle"><span class="text-focus">Saldo Disponível: </span>{{$user->balance}}€</h3>
     </div>
 </div>
-
+<div class="row centered">
+    <div class="sm col-8">
+        <a href="{{ route('viewMovements') }}" class="btn inverted btn-md w100">Ver os meus movimentos</a><br><br>
+        <a href="{{ route('account') }}" class="btn primary btn-md w100">Voltar à minha conta</a>
+    </div>
+</div>
 
 
 </div>

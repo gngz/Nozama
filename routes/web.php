@@ -29,6 +29,7 @@ Route::prefix('account')->middleware('auth')->group(function() {
     Route::get('/', 'Account\AccountController@index')->name('account');
     Route::get('/edit', 'Account\AccountController@edit')->name('editAccount');
     Route::post('/edit', 'Account\AccountController@editForm')->name('editAccountForm');
+    Route::get('/movements', 'CreditController@movements')->name('viewMovements');
     addressPrefix();
 
 });
@@ -82,24 +83,29 @@ Route::prefix('util')->group(function() {
 
 });
 
-Route::prefix('payment')->group(function() {
-    Route::get('/{id}', 'PaymentController@payment');
-    Route::get('/success/{id}', 'PaymentController@success');
-});
 
 Route::prefix('credit')->middleware('auth')->group(function() {
     Route::view('/add','credit.addcredit')->name('addCredit');
     Route::post('/confirm','CreditController@confirm')->name('creditConfirm');
     Route::get('/success/{id}', 'CreditController@success');
     Route::view('/cancel','credit.cancel');
-    Route::get('/', 'CreditController@view')->name('creditView');
-
 });
 
 
 
+Route::prefix('payment')->middleware('auth')->group(function() {
+    Route::get('/address','PaymentController@setAddress')->name('paymentAddress');
+    Route::post('/process','PaymentController@process')->name('processPayment');
+    Route::get('/{id}','PaymentController@pay')->name('payProposal');
+    Route::post('/{id}','PaymentController@confirm');
+});
+
+
+
+
+
 Route::prefix('search')->group(function() {
-    Route::get('/', 'SearchController@search');
+    Route::get('/', 'SearchController@search')->name('search');
 
 });
 

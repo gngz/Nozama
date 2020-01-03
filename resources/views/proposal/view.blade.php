@@ -59,7 +59,7 @@
 <div class="row centered">
     <div class="sm col-8">
         
-        <a href="http://" class="btn primary">Aceitar Proposta</a>         
+        <a href="{{route('payProposal', $proposal->id)}}" class="btn primary">Comprar</a>         
         <a href="{{ url('/profile/contact/'. $proposal->user->id) }}" class="btn inverted">Contactar</a>
     </div>
 </div>
