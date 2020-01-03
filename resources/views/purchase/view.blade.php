@@ -108,7 +108,8 @@
             <h2 class="title">Propostas</h2>
         </div>
     </div>
-    
+    @if ($proposals->count() > 0)
+
     <div class="row centered">
         <div class="sm col-8">
             @foreach ($proposals as $proposal)
@@ -134,6 +135,15 @@
         </div>
     </div>
 
+        
+    @else
+    <div class="row centered">
+        <div class="sm col-8">
+            <p>Esta compra ainda não possui nenhuma proposta.</p>
+        </div>
+    </div>
+    @endif
+    
 
     
     @endif

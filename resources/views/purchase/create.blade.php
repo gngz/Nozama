@@ -13,7 +13,7 @@
     <div class="row centered">
         <div class="sm col-8">
             <h1 class="title">Editar</h2>
-            <h2 class="subtitle">Apenas os campos modificas são alterados.</h2>
+            <h2 class="subtitle">Apenas os campos modificados são alterados.</h2>
         </div>
     </div>
    
