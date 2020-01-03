@@ -4,38 +4,9 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="title">Categoria {{$category->name}}</h1>
+        <h1 class="title">Sub-Categoria {{$subcategory->name}}</h1>
     </div>
 </div>
-
-@if(count($subcategories) > 0)
-    
-
-<div class="row centered">
-    <div class="sm col-8">
-        <h2 class="title">Sub-categorias</h2>
-    </div>
-</div>
-
-
-<div class="row centered">
-    <div class="sm col-8">
-        <div class="row space wrap gap">
-
-            @foreach ($subcategories as $subcategory)
-                <div class="sm col-2">
-                    <a href="{{ route('viewSubcategory', $subcategory->id) }}"><button class="btn flat-primary btn-option"> {{ $subcategory->name }} </button></a>
-                </div>
-                
-            @endforeach
-            
-            
-        </div>
-    </div>
-</div>
-    
-@endif
-
 
 
 <div class="row centered">
@@ -80,7 +51,6 @@
                         @if ($purchase->user != Auth::user())
                             <a href="{{ url('/proposals/make/'. $purchase->id) }}" class="btn primary proposal">Fazer Proposta</a> 
                         @endif
-                   
                     @endauth
 
                    </div>
@@ -108,7 +78,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <p>Esta categoria não possui compras..</p>
+        <p>Esta sub-categoria não possui compras..</p>
     </div>
 </div>
 

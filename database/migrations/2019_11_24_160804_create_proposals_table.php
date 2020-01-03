@@ -22,7 +22,7 @@ class CreateProposalsTable extends Migration
 
             // foreign keys
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->bigInteger('purchase_id')->unsigned();
             $table->foreign('purchase_id')->references('id')->on('purchases')->onDelete('cascade');

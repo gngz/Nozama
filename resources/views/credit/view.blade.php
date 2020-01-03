@@ -29,9 +29,10 @@
     </div>
 </div>
 
-
+@if ($credits->total() > 0)
 <div class="row centered">
     <div class="sm col-8">
+
 
         <table class="w100">
             <thead>
@@ -66,7 +67,16 @@
       
     </div>
 </div>
+@else
 
+<div class="row centered">
+    <div class="sm col-8">
+        <p class="text-center">Não possui nenhum pagamento.</p>
+    </div>
+</div>
+
+    
+@endif
 
 </div>
 

@@ -27,7 +27,7 @@
         <p>Desenvolvedores:</p>
         <p>- <a href="https://diogopassos.pt">Gonçalo Passos</a> - Aluno 2030415</p>
         <p>- Henrique Sousa - Aluno 2094515</p>
-        <p>- Alex Faria - Aluno 2040516</p>
+        <p>- Alex Faria - Aluno 2021114</p>
         <br>
         <p>Docente: <a href="https://www.m-iti.org/people/filipe">Filipe Quintal</a></p>
     </div>

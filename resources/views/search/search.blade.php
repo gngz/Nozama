@@ -38,17 +38,19 @@
         @foreach ($purchases as $purchase)
                <div class="search">
                    <div class="search-img">
-                    @if ($purchase->images->count() > 0)
-                    <img class="search-img" src="/storage/{{ $purchase->images[0]->path }}">
-                    @else
-                        <img class="search-img" src="https://via.placeholder.com/260x200.png?text=Sem%20Foto">
-                    @endif
+                        <a href="{{ route('viewPurchase', $purchase->id)}}">
+                            @if ($purchase->images->count() > 0)
+                            <img class="search-img" src="/storage/{{ $purchase->images[0]->path }}">
+                            @else
+                                <img class="search-img" src="https://via.placeholder.com/260x200.png?text=Sem%20Foto">
+                            @endif
+                        </a>
 
                    </div>
                    <div class="search-body">
 
                     <h2 class="title"><a href="{{ route('viewPurchase', $purchase->id)}}">{{ $purchase->title }}</a></h2>
-                    <p><span class="text-focus">Comprador:</span> <a href="{{ route('viewProfile', $purchase->id)}}">{{ $purchase->user->name }}</a></p>
+                    <p><span class="text-focus">Comprador:</span> <a href="{{ route('viewProfile', $purchase->user->id)}}">{{ $purchase->user->name }}</a></p>
                     <p> {{$purchase->category->name}} » {{ $purchase->subcategory->name}}</p>
 
                     @if ($purchase->max_price) 
@@ -58,7 +60,9 @@
                     @endif
 
                     @auth
-                    <a href="{{ url('/proposals/make/'. $purchase->id) }}" class="btn primary proposal">Fazer Proposta</a> 
+                        @if ($purchase->user != Auth::user())
+                            <a href="{{ url('/proposals/make/'. $purchase->id) }}" class="btn primary proposal">Fazer Proposta</a> 
+                        @endif
                     @endauth
 
                    </div>

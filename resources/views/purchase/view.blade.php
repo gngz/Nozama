@@ -26,6 +26,7 @@
 <div class="row centered">
     <div class="sm col-8">
         <h1 class="title">{{ $purchase->title }}</h1>
+        <p>{{$purchase->category->name}} » {{ $purchase->subcategory->name}}</p>
         <p>
             <span class="text-focus">Comprador:</span> <a href="{{ url('/profile/'.$purchase->user->id)}}">{{ $purchase->user->name }}</a>
         </p>
@@ -84,6 +85,7 @@
 
 
 @auth
+
     @if ($user->id != $purchase->user_id)
 
     <div class="row centered">
@@ -111,7 +113,7 @@
             <h2 class="title">Propostas</h2>
         </div>
     </div>
-
+    
     <div class="row centered">
         <div class="sm col-8">
             @foreach ($proposals as $proposal)
@@ -141,6 +143,7 @@
     
     @endif
 
+    
    
 @endauth
 

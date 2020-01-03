@@ -23,6 +23,8 @@ class ProposalController extends Controller
                 return view('proposal.view',['purchase' => $purchase,'proposal' => $proposal , 'images' => $images, 'user' => $user]);
             }
             
+        } else {
+            return redirect('/');
         }
        
 
@@ -62,9 +64,12 @@ class ProposalController extends Controller
 
     function make(Request $request) {
 
+        $user = Auth::User();
+
         $purchase = Purchase::find($request->id);
 
-        //dd($purchase);
+        if($user == $purchase->user)
+            return redirect('/');
 
         return view('proposal.make',['purchase' => $purchase]);
     }

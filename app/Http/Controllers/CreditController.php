@@ -18,6 +18,10 @@ class CreditController extends Controller
         $total = ( $this->calculateTotal($amount) ); 
         $fees = $total - $amount;
 
+        if($amount < 0.5) {
+            return view('msg', ['message' => "Tem adicionar pelo menos 0.50€ em créditos."]);
+        }
+
         
 
         $credit = Array(
