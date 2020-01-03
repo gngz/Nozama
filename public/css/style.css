@@ -155,6 +155,7 @@
   }
 
   .navbar ul a {
+    color: white;
     padding: 10px 0;
     display: block !important;
     text-align: center;
