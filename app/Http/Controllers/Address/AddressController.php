@@ -87,6 +87,7 @@ class AddressController extends Controller
             'region' => 'nullable|string',
             'zip' => 'nullable|string',
             'country' => 'nullable|string|max:58',
+
         ]);
 
         $user = Auth::User();
