@@ -114,6 +114,12 @@
             </div>
         </div>
     </form>
+
+    {{-- Eliminar o endereço  --}}
+    <form action="">
+        @csrf
+    </form>
+
     <!-- Botão para voltar a página anterior -->
     <div class="row centered">
         <div class="sm w500 form-field">

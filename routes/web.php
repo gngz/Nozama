@@ -113,7 +113,7 @@ function addressPrefix() {
         Route::post('/', 'Address\AddressController@isMain')->name('mainAddress');
 
         //eliminar endereço
-
+        Route::get('/edit/{id}/delete', 'Address\AddressController@delete')->name('deleteAddress');
     });
 }
 
