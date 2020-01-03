@@ -6,8 +6,8 @@ use App\Address;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
 use Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class AddressController extends Controller
 {
@@ -27,7 +27,7 @@ class AddressController extends Controller
      * @return void
      */
     public function index(Request $request){
-        $address = DB::table('addresses')->get();
+        $address = Address::all();
         $user = Auth::User();
         return view('address.addressList',['address' => $address, 'user'=> $user]);
     }
@@ -37,6 +37,19 @@ class AddressController extends Controller
     }
 
     public function addAdress(Request $request){
+
+        $request->validate([
+            'name' => 'required|string|max:30',
+            'address' => 'required|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'required|numeric|min:9',
+            'city' => 'required|sometimes|string|max:40',
+            'region' => 'required|string',
+            'zip' => 'required|string',
+            'country' => 'required|string|max:58',
+        ]);
+
+
         $address = new Address();
 
         $address->user_id = Auth::User()->id;
@@ -52,57 +65,125 @@ class AddressController extends Controller
 
         $address->save();
 
-        //dd($address);
 
-        return redirect('/account/address/');
+
+        redirect(route('addressList'));
     }
 
-    /* public function edit(){
-        $address = DB::table('addresses')->get();
-        foreach($address as $key => $data){
-            $user = Auth::User();
-            if($user->id == $data->user_id){
-                return view('address.edit',['data' => $data]);
-            }
-        }
-    } */
 
     public function edit(Request $request){
-        $address = DB::table('addresses')->get();
+        $address = Address::find($request->id);
 
-        foreach($address as $key => $data){
-            if($data->id == $request->id)
-            return view('address.edit',['data' => $data]);
-        }
+
+        // Verificar se a morada existe ou se é do user
+        
+        return view('address.edit',['data' => $address]);
+        
     }
 
     public function editAddress(Request $request){
+
+        $request->validate([
+            'name' => 'nullable|string|max:30',
+            'address' => 'nullable|string',
+            'address_extra' => 'nullable|string',
+            'phone' => 'nullable|numeric|min:9',
+            'city' => 'nullable|string|max:40',
+            'region' => 'nullable|string',
+            'zip' => 'nullable|string',
+            'country' => 'nullable|string|max:58',
+
+        ]);
+
         $user = Auth::User();
 
         $address = Address::find($request->id);
 
-        dd($address);
 
-        if($user->id != $request->id){
-            return redirect ("/account/address");
+
+        if($address){
+
+            
+            if($address->user != $user){
+
+                
+                return redirect(route('addressList'));
+            }
+
+    
+
+            $address->name = $request->name;
+            $address->address = $request->address;
+            $address->address_extra = $request->address_extra;
+            $address->phone = $request->phone;
+            $address->city = $request->city;
+            $address->region = $request->region;
+            $address->country = $request->country;
+            $address->zip = $request->zip;
+
+            $address->save();
+
+            return redirect(route('addressList'));
+
+
+        } else {
+            return redirect(route('addressList'));
         }
 
-        $address->name = $request->name;
-        $address->address = $request->address;
-        $address->address_extra = $request->address_extra;
-        $address->phone = $request->phone;
-        $address->city = $request->city;
-        $address->region = $request->region;
-        $address->country = $request->country;
-        $address->zip = $request->zip;
-
-        $address->save();
-
-        return redirect ("/account/address");
     }
 
-    public function isMain(Request $request){
-        dd($request);
+    public function remove(Request $request) {
+        $user = Auth::User();
+
+        $address = Address::find($request->id);
+
+        if($address) {
+
+            
+            if($address->user == $user) {
+                $address->delete();
+                return view('msg', ['message' => "Morada removida com sucesso."]);
+            }
+
+        } 
+
+        return redirect(route('addressList'));
+
+    }
+
+    public function setMain(Request $request){
+        $user = Auth::User();
+
+        $address = Address::find($request->id);
+
+        if($address) {
+            
+            if($address->user == $user) {
+
+                $this->unsetMain();
+                $address->is_main = true;
+
+                $address->save();
+                
+                return redirect(route('addressList'));
+            }
+
+        } 
+
+        return redirect(route('addressList'));
+    }
+
+    public function unsetMain() {
+        $user = Auth::User();
+
+        $addresses = $user->addresses;
+
+        $addresses->filter(function($address) {
+            if($address->is_main) {
+                $address->is_main = false;
+                $address->save();
+            }
+        });
     }
 
 }
