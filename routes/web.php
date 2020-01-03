@@ -108,10 +108,7 @@ Route::prefix('search')->group(function() {
     Route::get('/', 'SearchController@search')->name('search');
 
 });
-/*
-        TESTE!!!!
-*/
-Route::get('/send','PaymentController@sendRecipe');
+
 
 function addressPrefix() {
     Route::prefix('address')->group(function() {
