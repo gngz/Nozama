@@ -52,16 +52,19 @@
                 <tr>
                     <td class="text-center">{{ $controller::printType($credit->type) }}</td>
                     @if ($credit->type == 'credit' or $credit->type == 'sell')
-                        <td class="text-center">+{{ $credit->amount }}€</td>
+                        @if($credit->state == 'wait')
+                        <td class="text-center">n/a</td>
+                        @else
+                            <td class="text-center">+{{ $credit->amount }}€</td>
+                        @endif
+                        
                     @else
                         <td class="text-center">-{{ $credit->amount }}€</td>
                     @endif
                     <td class="text-center">{{ $credit->updated_at }}</td>
-                    @if ($credit->type == 'credit')
-                    <td class="text-center">n/a</td>
-                    @else
+               
                     <td class="text-center">{{ $credit->description }} </td>
-                    @endif
+                
                     <td class="text-center">{{ $credit->state == 'paid' ? 'Pago' : 'Erro'}}</td>
           
                     

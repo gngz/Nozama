@@ -26,10 +26,11 @@
 <body>
 
     <div class="header" style="padding-top:20px;padding-bottom:20px;">
-        <img src="https://nozama.ga/img/logo.png" alt="">
+        <img src="{{asset('images/logo.png')}}" alt="">
     </div>
     <div class="body">
         <h3>Recebeu uma mensagem do utilizador {{$user->name }}.</h3>
+
 
         <p><strong>Assunto:</strong> {{$subject}}</p>
         <strong>Mensagem:</strong>

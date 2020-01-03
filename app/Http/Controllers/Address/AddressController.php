@@ -65,9 +65,7 @@ class AddressController extends Controller
 
         $address->save();
 
-
-
-        redirect(route('addressList'));
+        return redirect(route('addressList'));
     }
 
 

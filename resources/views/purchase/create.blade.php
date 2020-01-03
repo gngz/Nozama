@@ -80,12 +80,12 @@
                 </div>
             </div>
 
-            @error('max_price')
+            @error('maxPrice')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
-            @error('min_price')
+            @error('minPrice')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

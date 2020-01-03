@@ -15,6 +15,12 @@ class CreditController extends Controller
 
     function confirm(Request $request) {
 
+        
+        $request->validate([
+            'value' => 'numeric|between:0.5,999999',
+
+        ]);
+
         $amount = $request->value;
         $total = ( $this->calculateTotal($amount) ); 
         $fees = $total - $amount;
@@ -64,6 +70,7 @@ class CreditController extends Controller
           $db_credit->type = 'credit';
           $db_credit->user_id = $user->id;
           $db_credit->amount = $amount;
+          $db_credit->description = "Carregamento Nozama";
 
           $db_credit->save();
 

@@ -76,7 +76,7 @@ class ProposalController extends Controller
 
     function addProposal(Request $request) {
         $request->validate([
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|between:0,999999',
             'condition' => 'required|string',
             'description' => ['required','string', 
                 function ($attribute, $value, $fail) {

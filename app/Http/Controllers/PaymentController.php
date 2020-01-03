@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\Mail\Recipe;
 use App\Movement;
 use App\Proposal;
 use App\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -48,7 +50,7 @@ class PaymentController extends Controller
         $address = Address::find($request->address);
 
         if($address->user != $user) {
-            // erro
+            return redirect(route('account'));
         }
 
         $purchase_id = $request->session()->get('payment_purchase');
@@ -100,7 +102,9 @@ class PaymentController extends Controller
 
                 $movement_buyer->save();
 
-                $purchase->delete();
+                $this->sendRecipe($user, $seller, $address , $purchase, $price);
+
+                //$purchase->delete();
 
                 return view('msg', ['message' => "Pagamento efectuado com sucesso."]);
 
@@ -128,6 +132,15 @@ class PaymentController extends Controller
         
 
         dd($request->session()->all(), $request->address);
+    }
+
+    function sendRecipe($user, $seller, $address, $purchase, $price) {
+        Mail::to(Auth::user())->bcc($seller)->send(new Recipe($user, $seller, $address, $purchase, $price));
+     
+    }
+
+    function sendInfo() {
+
     }
 
     function confirm(Request $request) {
