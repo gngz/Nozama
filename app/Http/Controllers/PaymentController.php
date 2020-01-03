@@ -104,7 +104,7 @@ class PaymentController extends Controller
 
                 $this->sendRecipe($user, $seller, $address , $purchase, $price);
 
-                //$purchase->delete();
+                $purchase->delete();
 
                 return view('msg', ['message' => "Pagamento efectuado com sucesso."]);
 
@@ -131,7 +131,7 @@ class PaymentController extends Controller
 
         
 
-        dd($request->session()->all(), $request->address);
+        
     }
 
     function sendRecipe($user, $seller, $address, $purchase, $price) {
