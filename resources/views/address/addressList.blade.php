@@ -10,13 +10,15 @@
 
 <div class="row centered">
     <div class="sm col-8">
+        <a href="{{ route('addAddress') }}" class="btn primary">Adicionar Morada</a>
+    </div>
+</div>
+
+
+
+<div class="row centered">
+    <div class="sm col-8">
         <div class="row space wrap gap">
-            <!-- Adicionar novo endereço -->
-            <div class="sm col-3">
-                <div class="card-plus">
-                <a href="{{ route('addAddress') }}"><button class="plus-button"></button></a>
-                </div>
-            </div>
 
             <!-- Endereços na BD-->
             @foreach($address as $key => $data) <!-- Chamada dos valores, defenido no Controller -->
@@ -36,19 +38,7 @@
                 @endif
             @endforeach
 
-            {{-- <div class="sm col-3">
-                <div class="card">
-                    <h3>Henrique Sousa</h3>
-                    <p>Estrada que Sobe pra baixo, nº55</p>
-                    <p>Funchal</p>
-                    <p>9350-145 Funchal</p>
-                    <p>Portugal</p>
-                    <p>Telemóvel: 1177656565</p>
-                    <button class="btn primary">Editar</button>
-                    <button class="btn inverted">Definir como Principal</button>
-                </div>
-            </div> --}}
-
+ 
         </div>
     </div>
 </div>

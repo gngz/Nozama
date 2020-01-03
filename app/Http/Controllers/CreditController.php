@@ -59,7 +59,8 @@ class CreditController extends Controller
 
           $db_credit = new Credit();
 
-          $db_credit->id = $checkout->payment_intent;
+          $db_credit->stripe_id = $checkout->payment_intent;
+          $db_credit->type = 'credit';
           $db_credit->user_id = $user->id;
           $db_credit->amount = $amount;
 
@@ -82,7 +83,7 @@ class CreditController extends Controller
 
         $credits = $user->credits()->paginate(10);
 
-        return view('credit.view',['user' => $user, 'credits' => $credits]);
+        return view('credit.view',['user' => $user, 'credits' => $credits , 'controller' => $this]);
     }
 
 
@@ -106,7 +107,11 @@ class CreditController extends Controller
             $user = User::find($user_id);
             $charge = $balance->net / 100;
 
-            $db_credit = Credit::find($payment->id);
+            $stripe_id = $payment->id;
+            
+            $db_credit = Credit::all()->filter(function($credit) use ($stripe_id) {
+                return $credit->stripe_id == $stripe_id;
+            })->first();
 
             if($db_credit) {
                 if($db_credit->state == 'paid') {
@@ -141,6 +146,18 @@ class CreditController extends Controller
         }
 
   
+
+    }
+
+    static function printType($type) {
+        if($type == 'credit' )
+            return 'Crédito';
+
+        if($type == 'buy' )
+            return 'Compra';
+
+        if($type == 'sell' )
+            return 'Venda';
 
     }
 

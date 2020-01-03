@@ -14,12 +14,15 @@ class CreateCreditsTable extends Migration
     public function up()
     {
         Schema::create('credits', function (Blueprint $table) {
-            
-            $table->string('id')->unique();
+            $table->bigIncrements('id');
+            $table->string('stripe_id')->nullable();
+            $table->enum('type' , ['sell', 'buy', 'credit']);
             $table->enum('state', ['wait', 'paid'])->default('wait');
             $table->decimal('amount',10,2);
+
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->timestamps();
         
         });

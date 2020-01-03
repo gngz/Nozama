@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Credit extends Model
 {
-    public $incrementing = false;
+    //public $incrementing = false;
 }
