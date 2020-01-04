@@ -19,6 +19,11 @@ Route::view('/about', 'about');
 Route::view('/terms', 'terms');
 Route::view('/privacy', 'privacy');
 
+Route::any('/', function (Request $request) {
+
+    return view('api');
+    
+});
 
 Auth::routes();
 

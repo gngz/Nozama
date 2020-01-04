@@ -16,11 +16,7 @@ use App\User;
 |
 */
 
-Route::any('/', function (Request $request) {
 
-    return view('api');
-    
-});
 
 Route::middleware('auth:api')->name('getUsers')->get('/user', function (Request $request) {
     
