@@ -14,9 +14,22 @@ use App\User;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::any('/', function (Request $request) {
+
+    return view('api');
+    
+});
+
+Route::middleware('auth:api')->name('getUsers')->get('/user', function (Request $request) {
     
     return response()->json( User::all());
+
+});
+
+
+Route::middleware('auth:api')->name('getUser')->get('/user/{id}', function (Request $request) {
+    
+    return response()->json( User::find($request->id));
 
 });
 
