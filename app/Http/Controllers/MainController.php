@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     function main(Request $request) {
 
-        $purchases = Purchase::latest()->take(5)->with('images')->get();
+        $purchases = Purchase::latest()->take(4)->with('images')->get();
 
 
 
