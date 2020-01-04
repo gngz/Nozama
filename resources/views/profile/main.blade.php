@@ -12,7 +12,7 @@
 
     <div class="row centered">
         <div class="sm col-8">
-            <a href="{{ route('removeAccount') }}" class="btn primary">Eliminar Utilizador</a>
+            <a href="{{ route('removeAccount', {{$user->id}}) }}" class="btn primary">Eliminar Utilizador</a>
         </div>
     </div>
 
