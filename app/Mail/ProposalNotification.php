@@ -11,14 +11,18 @@ class ProposalNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $proposal;
+    private $purchase;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($proposal , $purchase)
     {
-        //
+        $this->proposal = $proposal;
+        $this->purchase = $purchase;
     }
 
     /**
@@ -28,6 +32,7 @@ class ProposalNotification extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $this->subject("Nozama - Recebeu uma proposta de ". $this->proposal->user->name .".");
+        return $this->view('emails.proposal', ['proposal' => $this->proposal, 'purchase' => $this->purchase]);
     }
 }

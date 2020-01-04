@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Proposal;
 use App\Purchase;
 use App\Image;
+use App\Mail\ProposalNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProposalController extends Controller
 {
@@ -113,6 +115,10 @@ class ProposalController extends Controller
                $image->save();
             }
         }
+
+
+        Mail::to($purchase->user)->send(new ProposalNotification($proposal, $purchase));
+
 
         return redirect(route("viewProposal",$proposal->id));
 
