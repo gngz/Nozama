@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use App\Purchase;
 use Illuminate\Http\Request;
 use App\User;
@@ -20,14 +21,14 @@ Route::any('/', function (Request $request) {
     
 });
 
-Route::middleware('auth:api')->name('getUsers')->get('/users', function (Request $request) {
+Route::middleware('auth:api')->name('getUsers')->get('/user', function (Request $request) {
     
     return response()->json( User::all());
 
 });
 
 
-Route::middleware('auth:api')->name('getUser')->get('/users/{id}', function (Request $request) {
+Route::middleware('auth:api')->name('getUser')->get('/user/{id}', function (Request $request) {
     
 
     $user = User::find($request->id);
@@ -40,7 +41,7 @@ Route::middleware('auth:api')->name('getUser')->get('/users/{id}', function (Req
 
 });
 
-Route::middleware('auth:api')->get('/purchases', function (Request $request) {
+Route::middleware('auth:api')->get('/purchase', function (Request $request) {
     
     $purchases = Purchase::all();
 
@@ -49,7 +50,7 @@ Route::middleware('auth:api')->get('/purchases', function (Request $request) {
 
 
 
-Route::middleware('auth:api')->get('/purchases/{id}', function (Request $request) {
+Route::middleware('auth:api')->get('/purchase/{id}', function (Request $request) {
     
     $purchase = Purchase::with('images')->find($request->id);
 
@@ -58,6 +59,13 @@ Route::middleware('auth:api')->get('/purchases/{id}', function (Request $request
     } else {
         return response()->json(["error" => "Purchase not found"],404);
     }
+});
+
+Route::middleware('auth:api')->get('/category', function (Request $request) {
+    
+    $category = Category::all();
+
+    return response()->json($category);
 });
 
 
