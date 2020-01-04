@@ -20,16 +20,23 @@ Route::any('/', function (Request $request) {
     
 });
 
-Route::middleware('auth:api')->name('getUsers')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->name('getUsers')->get('/users', function (Request $request) {
     
     return response()->json( User::all());
 
 });
 
 
-Route::middleware('auth:api')->name('getUser')->get('/user/{id}', function (Request $request) {
+Route::middleware('auth:api')->name('getUser')->get('/users/{id}', function (Request $request) {
     
-    return response()->json( User::find($request->id));
+
+    $user = User::find($request->id);
+
+    if($user) {
+        return response()->json($user);
+    } else {
+        return response()->json(["error" => "User not found"],404);
+    }
 
 });
 
@@ -54,6 +61,3 @@ Route::middleware('auth:api')->get('/purchases/{id}', function (Request $request
 });
 
 
-Route::middleware('auth:api')->post('/purchases/add', function (Request $request) {
-
-});
