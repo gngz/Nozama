@@ -12,7 +12,7 @@
 
     <div class="row centered">
         <div class="sm col-8">
-            <a href="#" class="btn primary">Eliminar Utilizador</a>
+            <a href="{{ route('removeAccount') }}" class="btn primary">Eliminar Utilizador</a>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
 @auth
     <div class="row centered">
         <div class="sm col-8">
-            <a href="{{ url('/profile/contact/'.$user->id)}}" class="btn primary">Contactar</a>
+            <a href="{{ route('contactProfile',$user->id)}}" class="btn primary">Contactar</a>
         </div>
     </div>
 @endauth
@@ -48,7 +48,7 @@
                         <strong class="text-focus">{{ $purchase->title }}</strong>
                     </div>
                     <div class="sm col-1">
-                        <a class="btn primary" href="{{url('/purchase/'.$purchase->id)}}">Ver Compra</a>
+                        <a class="btn primary" href="{{route('viewPurchase',$purchase->id)}}">Ver Compra</a>
                     </div>
                 </div>
             </div>
