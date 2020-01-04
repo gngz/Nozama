@@ -64,6 +64,7 @@ Route::middleware('auth:api')->get('/purchase/{id}', function (Request $request)
 Route::middleware('auth:api')->get('/category', function (Request $request) {
     
     $category = Category::with('subcategories')->get();
+    $category->subcategories->makeHidden('category_id');
 
     return response()->json($category);
 });
