@@ -2,6 +2,7 @@
 
 use App\Category;
 use App\Purchase;
+use App\SubCategory;
 use Illuminate\Http\Request;
 use App\User;
 /*
@@ -64,9 +65,45 @@ Route::middleware('auth:api')->get('/purchase/{id}', function (Request $request)
 Route::middleware('auth:api')->get('/category', function (Request $request) {
     
     $category = Category::with('subcategories')->get();
-    $category->subcategories->makeHidden('category_id');
 
     return response()->json($category);
 });
 
 
+Route::middleware('auth:api')->get('/category/{id}', function (Request $request) {
+    
+    $category = Category::with('subcategories')->find($request->id);
+
+    return response()->json($category);
+});
+
+Route::middleware('auth:api')->get('/subcategory', function (Request $request) {
+    
+    $subcategory = SubCategory::all()->makeVisible(['category_id']);
+
+    return response()->json($subcategory);
+});
+
+
+Route::middleware('auth:api')->get('/subcategory/{id}', function (Request $request) {
+    
+    $subcategory = SubCategory::find($request->id)->makeVisible(['category_id']);
+
+    return response()->json($subcategory);
+});
+
+
+Route::middleware('auth:api')->post('/search', function (Request $request) {
+
+    $query = $request->query('query');
+
+    if(!$query) {
+        $result = Purchase::simplePaginate(10);
+    } else {
+        $result = Purchase::where('title', 'like', '%'.$query.'%')
+        ->simplePaginate(10);
+
+    }
+
+    return response()->json($result);
+});
