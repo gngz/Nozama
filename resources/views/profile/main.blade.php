@@ -3,7 +3,7 @@
 @section('content')
 
 @auth
-    @if ($user->role == "admin" )
+    @if (Auth::user()->role == "admin" )
     <div class="row centered">
         <div class="sm col-8">
             <h2 class="title">Administrador</h2>

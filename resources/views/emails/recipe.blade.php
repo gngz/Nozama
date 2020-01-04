@@ -38,11 +38,6 @@
             margin-bottom: 0px;
         }
 
-        .fact {
-            width: 50%;
-            display: inline-block;
-            float: right;
-        }
 
 
       

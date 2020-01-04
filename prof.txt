@@ -1,6 +1,0 @@
-API Stripe or Paypal
-API com dados tipo lista top 10 vendidos, dados de vendas. Que de para uma listagem de uma possivel app movel
-3 utilizadores - guest, vendedores/compradores
-mais coisas na compra, um sistema de avaliação - reviews
-histórico de produto
-popular mais o site, com vários tipos de listagens
