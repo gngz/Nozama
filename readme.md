@@ -1,4 +1,4 @@
-<p  align="center"><img  src="https://nozama.ga/img/logo.png"></p>
+<p  align="center"><img  src="https://nozama.ga/images/logo.png"></p>
 <p  align="center">
 <b>Website </b>  <a  href="https://nozama.ga">https://nozama.ga</a>
 </p>
@@ -16,3 +16,7 @@ O projeto foi desenvolvido por:
 Deverão criar um *branch* para cada *feature* nova e ao finalizar o desenvolvimento pedir um ***pull-request***.
 
 **ATENÇÃO**:  As atualizações no *branch* *master* são espelhadas automaticamente no servidor web. Sendo assim, antes de efetuar qualquer merge, deverão ser feitos testes.
+
+### Base de dados
+
+<img src="https://i.imgur.com/cyyoyRJ.png"> 
