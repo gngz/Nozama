@@ -63,7 +63,7 @@ Route::middleware('auth:api')->get('/purchase/{id}', function (Request $request)
 
 Route::middleware('auth:api')->get('/category', function (Request $request) {
     
-    $category = Category::all();
+    $category = Category::with('subcategories')->all();
 
     return response()->json($category);
 });
