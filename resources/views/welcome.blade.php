@@ -12,7 +12,7 @@
 
     <div class="row centered">
         <div class="sm col-8">
-            <h2 class="title">Últimas Compras</h2>
+            <h2 class="title">Últimos Anúncios</h2>
             <div class="purchases wrap">
                 @foreach ($purchases as $purchase)
                 <div class="purchase">

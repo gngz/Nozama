@@ -4,7 +4,7 @@
 
 <div class="row centered">
     <div class="sm col-8">
-        <h1 class="title">As minhas compras</h1>
+        <h1 class="title">Os meus anúncios</h1>
     </div>
 </div>
 
